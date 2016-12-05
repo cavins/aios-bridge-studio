@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.aispeech.aios.bridge">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".BridgeApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:persistent="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.PhoneActivity"
+            android:label="@string/demo_title_phone" />
+        <activity
+            android:name=".activity.MusicActivity"
+            android:label="@string/demo_title_music" />
+        <activity
+            android:name=".activity.CustomizeActivity"
+            android:label="@string/demo_title_customize" />
+        <activity
+            android:name=".activity.SystemActivity"
+            android:label="@string/demo_title_system" />
+        <activity
+            android:name=".activity.MapActivity"
+            android:label="@string/demo_title_map" />
+        <activity
+            android:name=".activity.SettingActivity"
+            android:label="@string/demo_title_setting" />
+        <activity
+            android:name=".activity.StatusActivity"
+            android:label="@string/demo_title_status" />
+        <activity
+            android:name=".activity.RadioActivity"
+            android:label="@string/demo_title_radio" />
+        <activity
+            android:name=".activity.UIActivity"
+            android:label="@string/demo_title_ui" />
+
+        <receiver
+            android:name=".receiver.BridgeReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="aios.intent.action.phone.BOOT" />
+                <action android:name="aios.intent.action.music.BOOT" />
+                <action android:name="aios.intent.action.map.BOOT" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.aispeech.aios.sdk.receiver.SDKReceiver"
+            android:enabled="true"
+            android:exported="true"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+
+                <!-- 如果需要在应用停止时被拉起来，请接收该广播 -->
+                <action android:name="aios.intent.action.START_SDK_NODE" />
+                <!-- 如果需要在aios-daemon重启时一起重启，请接收该广播并将android:persistent属性设为"true" -->
+                <action android:name="aios.intent.action.REBOOT" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="service.MainService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name="service.DaemonService"
+            android:enabled="true"
+            android:exported="true"
+            android:process="com.aios.bridge.remote"></service>
+    </application>
+
+</manifest>

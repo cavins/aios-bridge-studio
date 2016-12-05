@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+
+android {
+    useLibrary 'org.apache.http.legacy'
+    compileSdkVersion 23
+    buildToolsVersion "23.0.0"
+
+    defaultConfig {
+        applicationId "com.aispeech.aios.bridge"
+        minSdkVersion 16
+        //SO库不支持23并且没有做动态权限管理，请勿修改成23+
+        targetSdkVersion 22
+        versionCode 29
+        versionName "user1.0.11" + releaseTime()
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+def releaseTime() {
+    def runTasks = gradle.startParameter.taskNames
+    if ('assemble' in runTasks
+            || 'assembleDebug' in runTasks
+            || 'assembleRelease' in runTasks) {
+        Properties versionProps = new Properties();
+        File versionPropsFile = file('../version.properties');
+        if (versionPropsFile.canRead()) {
+            versionProps.load(new FileInputStream(versionPropsFile));
+            String version_date = versionProps['VERSION_DATE'].toString();
+            println ">version_date:" + version_date;
+            String version_count = versionProps['VERSION_COUNT'].toString();
+            println ">version_count:" + version_count;
+            return "." + version_date + "." + version_count
+        }
+
+        return ""
+    } else {
+        return ""
+    }
+}
