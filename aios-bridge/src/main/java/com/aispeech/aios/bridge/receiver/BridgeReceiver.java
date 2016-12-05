@@ -11,6 +11,7 @@ import com.aispeech.aios.bridge.activity.MainActivity;
 import com.aispeech.aios.bridge.activity.MapActivity;
 import com.aispeech.aios.bridge.activity.MusicActivity;
 import com.aispeech.aios.bridge.activity.PhoneActivity;
+import com.aispeech.aios.bridge.presenter.CustomizeMapsPresenter;
 import com.aispeech.aios.common.config.SDKBroadcast;
 
 public class BridgeReceiver extends BroadcastReceiver {
@@ -43,6 +44,9 @@ public class BridgeReceiver extends BroadcastReceiver {
             Intent intent1 = new Intent(BridgeApplication.getContext(), MainActivity.class);
             intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             BridgeApplication.getContext().startActivity(intent1);
+        } else if("action_change_local_map".equals(action)) {
+            String mapType = intent.getStringExtra("maptype");
+            CustomizeMapsPresenter.getInstance().changeDefaultMap(mapType);
         }
     }
 }

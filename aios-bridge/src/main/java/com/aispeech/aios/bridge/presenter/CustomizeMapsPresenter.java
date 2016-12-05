@@ -58,6 +58,13 @@ public class CustomizeMapsPresenter {
         AIOSMapManager.getInstance().registerMapListener(customizeMapListener);
     }
 
+    public void changeDefaultMap(String mapType) {
+        if(mapType.equals("gaode"))
+            AIOSSettingManager.getInstance().setDefaultMap(AppPackageName.GAODEMAP_APPLITE);
+        else
+            AIOSSettingManager.getInstance().setDefaultMap(AppPackageName.BAIDUMAP_APP);
+    }
+
     public void unregisMapListener() {
         AIOSMapManager.getInstance().unregisterMapListener();
     }

@@ -60,6 +60,7 @@
                 <action android:name="aios.intent.action.music.BOOT" />
                 <action android:name="aios.intent.action.map.BOOT" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="action_change_local_map" />
             </intent-filter>
         </receiver>
         <receiver
