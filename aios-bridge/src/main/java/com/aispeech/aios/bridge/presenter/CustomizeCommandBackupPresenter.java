@@ -1,7 +1,9 @@
 package com.aispeech.aios.bridge.presenter;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 
+import com.aispeech.aios.bridge.BridgeApplication;
 import com.aispeech.aios.bridge.common.AppPackageName;
 import com.aispeech.aios.bridge.utils.APPUtil;
 import com.aispeech.aios.sdk.bean.Command;
@@ -57,6 +59,10 @@ public class CustomizeCommandBackupPresenter {
                 APPUtil.getInstance().openApplication(AppPackageName.EDOG_APP);
             } else if(CustomizeCommandsPresenter.OPEN_RADAR.equals(command)) {
                 AIOSTTSManager.speak("为您打开雷达");
+                BridgeApplication.getContext().sendBroadcast(new Intent("com.wanma.action.RADAR_ON"));
+            } else if(CustomizeCommandsPresenter.CLOSE_RADAR.equals(command)) {
+                AIOSTTSManager.speak("为您关闭雷达");
+                BridgeApplication.getContext().sendBroadcast(new Intent("com.wanma.action.RADAR_OFF"));
             } else if(CustomizeCommandsPresenter.OPEN_XIMALAYA.equals(command)) {
                 AIOSTTSManager.speak("为您打开喜马拉雅FM");
                 APPUtil.getInstance().openApplication(AppPackageName.FILE_XIMALAYA_APP);
