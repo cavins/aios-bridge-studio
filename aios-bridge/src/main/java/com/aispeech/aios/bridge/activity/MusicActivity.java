@@ -22,8 +22,8 @@ public class MusicActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
-        AIOSMusicManager.getInstance().registerMusicListener(new BridgeMusicListener());
-        AIOSMusicManager.getInstance().setLocalMusicInfo("AIOS音乐", AIOSForCarSDK.getPackageName());
+//        AIOSMusicManager.getInstance().registerMusicListener(new BridgeMusicListener());
+//        AIOSMusicManager.getInstance().setLocalMusicInfo("AIOS音乐", AIOSForCarSDK.getPackageName());
     }
 
     @Override

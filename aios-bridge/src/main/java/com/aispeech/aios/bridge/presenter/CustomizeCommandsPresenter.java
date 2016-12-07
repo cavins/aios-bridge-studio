@@ -25,6 +25,8 @@ public class CustomizeCommandsPresenter {
     public static final String OPEN_XIMALAYA = "/condition/openximalaya";//打开喜马拉雅反馈词
     public static final String OPEN_BAIDUMAP = "/condition/openbaidumap";//打开百度地图反馈词
     public static final String OPEN_GAODEMAP = "/condition/opengaodemap";//打开高德地图反馈词
+    public static final String SHUTDOWN = "/condition/shutdown";//关机
+    public static final String REBOOT = "/condition/reboot";//重启机器
 
     /**
      * 自定义命令集
@@ -36,6 +38,8 @@ public class CustomizeCommandsPresenter {
     private static final Command XIMALAYA_COMMAND = new Command(OPEN_XIMALAYA, new String[] {"开启喜马拉雅","打开喜马拉雅","帮我开喜马拉雅","开下喜马拉雅"});//喜马拉雅命令集
     private static final Command BAIDUMAP_COMMAND = new Command(OPEN_BAIDUMAP, new String[] {"开启百度地图","打开百度地图","帮我开百度地图","开下百度地图"});//百度地图命令集
     private static final Command GAODEMAP_COMMAND = new Command(OPEN_GAODEMAP, new String[] {"开启高德地图","打开高德地图","帮我开高德地图","开下高德地图"});//高德地图命令集
+    private static final Command SHUTDOWN_COMMAND = new Command(SHUTDOWN, new String[] {"关机", "帮我关机"});//关机命令集
+    private static final Command REBOOT_COMMAND = new Command(REBOOT, new String[] {"重启", "重启机器", "帮我重启", "帮我重启机器"});//重启命令集
 
 
     private ArrayList<Command> initCommands;
@@ -73,6 +77,8 @@ public class CustomizeCommandsPresenter {
         initCommands.add(XIMALAYA_COMMAND);
         initCommands.add(BAIDUMAP_COMMAND);
         initCommands.add(GAODEMAP_COMMAND);
+        initCommands.add(SHUTDOWN_COMMAND);
+        initCommands.add(REBOOT_COMMAND);
     }
 
     public ArrayList<Command> getAllCommands() {

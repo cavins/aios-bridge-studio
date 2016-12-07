@@ -72,6 +72,12 @@ public class CustomizeCommandBackupPresenter {
             } else if(CustomizeCommandsPresenter.OPEN_GAODEMAP.equals(command)) {
                 AIOSTTSManager.speak("为您打开高德地图");
                 APPUtil.getInstance().openApplication(AppPackageName.GAODEMAP_APPLITE);
+            } else if(CustomizeCommandsPresenter.SHUTDOWN.equals(command)) {
+                AIOSTTSManager.speak("为您关机中");
+                BridgeApplication.getContext().sendBroadcast(new Intent("com.aios.action.shutdown"));
+            }else if(CustomizeCommandsPresenter.REBOOT.equals(command)) {
+                AIOSTTSManager.speak("为您重启中");
+                BridgeApplication.getContext().sendBroadcast(new Intent("com.aios.action.reboot"));
             }
         }
 
