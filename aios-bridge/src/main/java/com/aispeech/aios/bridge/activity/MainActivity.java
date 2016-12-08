@@ -28,25 +28,26 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ListView mListView = (ListView) findViewById(R.id.list_view);
+        setContentView(R.layout.activity_launcher);
+//        ListView mListView = (ListView) findViewById(R.id.list_view);
 //        String versionText = String.format(getString(R.string.sdk_version), SDKBuild.VERSION.NAME);
-        String versionText = "欢迎使用AIOS for car SDK";
-        textView = (TextView) findViewById(R.id.text_version_info);
-        textView.setText(versionText);
+//        String versionText = "欢迎使用AIOS for car SDK";
+//        textView = (TextView) findViewById(R.id.text_version_info);
+//        textView.setText(versionText);
 
         // 添加ListItem，设置事件响应
-        if (mListView != null) {
-            mListView.setAdapter(new DemoListAdapter());
-            mListView.setOnItemClickListener(new OnItemClickListener() {
-                public void onItemClick(AdapterView<?> arg0, View v, int index, long arg3) {
-                    onListItemClick(index);
-                }
-            });
-        }
+//        if (mListView != null) {
+//            mListView.setAdapter(new DemoListAdapter());
+//            mListView.setOnItemClickListener(new OnItemClickListener() {
+//                public void onItemClick(AdapterView<?> arg0, View v, int index, long arg3) {
+//                    onListItemClick(index);
+//                }
+//            });
+//        }
 
         startService(new Intent(this, MainService.class));
         startService(new Intent(this, DaemonService.class));
+        MainActivity.this.finish();
     }
 
 
