@@ -85,8 +85,8 @@ public class MainActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        stopService(new Intent(this, MainService.class));
-        stopService(new Intent(this, DaemonService.class));
+//        stopService(new Intent(this, MainService.class));
+//        stopService(new Intent(this, DaemonService.class));
     }
 
     private class DemoListAdapter extends BaseAdapter {
