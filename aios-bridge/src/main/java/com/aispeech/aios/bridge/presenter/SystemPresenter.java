@@ -1,6 +1,7 @@
 package com.aispeech.aios.bridge.presenter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -41,6 +42,7 @@ public class SystemPresenter implements AIOSSystemListener {
         String text;
         if (changeType.equals(SystemProperty.VolumeProperty.VOLUME_RAISE)) {
             SystemDefaultUtil.getInstance().setVolumeUp();
+            BridgeApplication.getContext().sendBroadcast(new Intent("com.aispeech.aios.volume.set"));
             text = "音量已增大";
 
         } else if (changeType.equals(SystemProperty.VolumeProperty.VOLUME_LOWER)) {
