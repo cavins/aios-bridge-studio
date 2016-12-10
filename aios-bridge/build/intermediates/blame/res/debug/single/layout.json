@@ -1,43 +1,19 @@
 [
     {
-        "merged": "D:\\destop\\aios\\aios_3.0\\Master_aios-release-3.0_user3.0.12.161123.229\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_status.xml",
-        "source": "D:\\destop\\aios\\aios_3.0\\Master_aios-release-3.0_user3.0.12.161123.229\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_status.xml"
-    },
-    {
-        "merged": "D:\\destop\\aios\\aios_3.0\\Master_aios-release-3.0_user3.0.12.161123.229\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_ui.xml",
-        "source": "D:\\destop\\aios\\aios_3.0\\Master_aios-release-3.0_user3.0.12.161123.229\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_ui.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_customize.xml",
         "source": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_customize.xml"
-    },
-    {
-        "merged": "D:\\destop\\aios\\aios_3.0\\Master_aios-release-3.0_user3.0.12.161123.229\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_map.xml",
-        "source": "D:\\destop\\aios\\aios_3.0\\Master_aios-release-3.0_user3.0.12.161123.229\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_map.xml"
-    },
-    {
-        "merged": "D:\\destop\\aios\\aios_3.0\\Master_aios-release-3.0_user3.0.12.161123.229\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_music.xml",
-        "source": "D:\\destop\\aios\\aios_3.0\\Master_aios-release-3.0_user3.0.12.161123.229\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_music.xml"
-    },
-    {
-        "merged": "D:\\destop\\aios\\aios_3.0\\Master_aios-release-3.0_user3.0.12.161123.229\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_customize.xml",
-        "source": "D:\\destop\\aios\\aios_3.0\\Master_aios-release-3.0_user3.0.12.161123.229\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_customize.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
         "source": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "D:\\destop\\aios\\aios_3.0\\Master_aios-release-3.0_user3.0.12.161123.229\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_phone.xml",
-        "source": "D:\\destop\\aios\\aios_3.0\\Master_aios-release-3.0_user3.0.12.161123.229\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_phone.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_map.xml",
         "source": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_map.xml"
     },
     {
-        "merged": "D:\\destop\\aios\\aios_3.0\\Master_aios-release-3.0_user3.0.12.161123.229\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_radio.xml",
-        "source": "D:\\destop\\aios\\aios_3.0\\Master_aios-release-3.0_user3.0.12.161123.229\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_radio.xml"
+        "merged": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_launcher.xml",
+        "source": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_launcher.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_radio.xml",
@@ -48,24 +24,8 @@
         "source": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\demo_info_item.xml"
     },
     {
-        "merged": "D:\\destop\\aios\\aios_3.0\\Master_aios-release-3.0_user3.0.12.161123.229\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
-        "source": "D:\\destop\\aios\\aios_3.0\\Master_aios-release-3.0_user3.0.12.161123.229\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_main.xml"
-    },
-    {
-        "merged": "D:\\destop\\aios\\aios_3.0\\Master_aios-release-3.0_user3.0.12.161123.229\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\demo_info_item.xml",
-        "source": "D:\\destop\\aios\\aios_3.0\\Master_aios-release-3.0_user3.0.12.161123.229\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\demo_info_item.xml"
-    },
-    {
-        "merged": "D:\\destop\\aios\\aios_3.0\\Master_aios-release-3.0_user3.0.12.161123.229\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_system.xml",
-        "source": "D:\\destop\\aios\\aios_3.0\\Master_aios-release-3.0_user3.0.12.161123.229\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_system.xml"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_system.xml",
         "source": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_system.xml"
-    },
-    {
-        "merged": "D:\\destop\\aios\\aios_3.0\\Master_aios-release-3.0_user3.0.12.161123.229\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_setting.xml",
-        "source": "D:\\destop\\aios\\aios_3.0\\Master_aios-release-3.0_user3.0.12.161123.229\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_setting.xml"
     },
     {
         "merged": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_phone.xml",

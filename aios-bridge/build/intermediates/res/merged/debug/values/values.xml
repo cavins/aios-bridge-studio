@@ -112,6 +112,11 @@
     <string name="sync_contacts">同步联系人(你可以说打电话给张三/张麻子)</string>
     <string name="sync_local_musics">同步本地音乐</string>
     <style name="AppTheme" parent="android:Theme.Light.NoTitleBar">
+        <item name="android:windowIsTranslucent">true</item>
+
+        <item name="android:windowNoTitle">true</item>
+
+        <item name="android:windowBackground">@android:color/transparent</item>
         <!-- Customize your theme here. -->
         <!--<item name="colorPrimary">@color/colorPrimary</item>-->
         <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->

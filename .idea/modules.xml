@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/aios-bridge/aios-bridge.iml" filepath="$PROJECT_DIR$/aios-bridge/aios-bridge.iml" />
       <module fileurl="file://$PROJECT_DIR$/aios-bridge-studio.iml" filepath="$PROJECT_DIR$/aios-bridge-studio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
     </modules>
   </component>
 </project>

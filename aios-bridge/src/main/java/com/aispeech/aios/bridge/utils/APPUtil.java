@@ -224,7 +224,6 @@ public class APPUtil {
         if (TextUtils.isEmpty(pkgName)) {
             return false;
         }
-
         AILog.i(TAG, "The package will be open : " + pkgName);
         Intent intent = mContext.getPackageManager().getLaunchIntentForPackage(pkgName);
         if (intent == null) {
