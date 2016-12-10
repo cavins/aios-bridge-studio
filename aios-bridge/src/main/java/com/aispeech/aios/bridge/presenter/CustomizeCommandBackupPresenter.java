@@ -2,6 +2,7 @@ package com.aispeech.aios.bridge.presenter;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.aispeech.aios.bridge.BridgeApplication;
 import com.aispeech.aios.bridge.common.AppPackageName;
@@ -51,12 +52,16 @@ public class CustomizeCommandBackupPresenter {
          */
         @Override
         public void onCommandEffect(@NonNull String command) {
+            Log.i("ljwtest:", "接收到的命令" + command);
             if (CustomizeCommandsPresenter.OPEN_FM.equals(command)) {
                 AIOSTTSManager.speak("为您打开fm");
                 APPUtil.getInstance().openApplication(AppPackageName.FM_APP);
             } else if(CustomizeCommandsPresenter.OPEN_EDOG.equals(command)) {
                 AIOSTTSManager.speak("为您打开电子狗");
-                APPUtil.getInstance().openApplication(AppPackageName.EDOG_APP);
+                BridgeApplication.getContext().sendBroadcast(new Intent("com.wanma.action.EDOG_ON"));
+            }else if(CustomizeCommandsPresenter.CLOSE_EDOG.equals(command)){
+                AIOSTTSManager.speak("为您关闭电子狗");
+                BridgeApplication.getContext().sendBroadcast(new Intent("com.wanma.action.EDOG_OFF"));
             } else if(CustomizeCommandsPresenter.OPEN_RADAR.equals(command)) {
                 AIOSTTSManager.speak("为您打开雷达");
                 BridgeApplication.getContext().sendBroadcast(new Intent("com.wanma.action.RADAR_ON"));
@@ -78,6 +83,12 @@ public class CustomizeCommandBackupPresenter {
             }else if(CustomizeCommandsPresenter.REBOOT.equals(command)) {
                 AIOSTTSManager.speak("为您重启中");
                 BridgeApplication.getContext().sendBroadcast(new Intent("com.aios.action.reboot"));
+            } else if (CustomizeCommandsPresenter.OPEN_BT.equals(command)) {
+                AIOSTTSManager.speak("为您打开蓝牙电话");
+                APPUtil.getInstance().openApplication(AppPackageName.BLUETOOTH_APP);
+            } else if (CustomizeCommandsPresenter.CLOSE_BT.equals(command)) {
+                AIOSTTSManager.speak("为您关闭蓝牙电话");
+                BridgeApplication.getContext().sendBroadcast(new Intent("com.aios.action.closeBlueToothPhone"));
             }
         }
 
