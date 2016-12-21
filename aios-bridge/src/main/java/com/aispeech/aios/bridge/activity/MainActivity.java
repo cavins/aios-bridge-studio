@@ -29,6 +29,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launcher);
+        //其他账户push成功
 //        ListView mListView = (ListView) findViewById(R.id.list_view);
 //        String versionText = String.format(getString(R.string.sdk_version), SDKBuild.VERSION.NAME);
 //        String versionText = "欢迎使用AIOS for car SDK";
