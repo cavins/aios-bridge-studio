@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.CheckBox;
@@ -144,6 +145,9 @@ public class UIActivity extends Activity implements AIOSUIListener {
         AILog.d(TAG, "UI优先级生效，时间戳：" + effectTime);
         AILog.d(TAG, "生效前：" + pkgNameBefore + "->" + priorityBefore);
         AILog.d(TAG, "生效后：" + pkgNameAfter + "->" + priorityAfter);
+       Log.i("ljwtest:", "UI优先级生效，时间戳：" + effectTime);
+        Log.i("ljwtest:", "生效前：" + pkgNameBefore + "->" + priorityBefore);
+        Log.i("ljwtest:", "生效后：" + pkgNameAfter + "->" + priorityAfter);
         Toast.makeText(getApplicationContext(), "UI优先级生效，时间戳：" + effectTime, Toast.LENGTH_SHORT).show();
     }
 

@@ -13,6 +13,7 @@ import com.aispeech.aios.bridge.activity.MusicActivity;
 import com.aispeech.aios.bridge.activity.PhoneActivity;
 import com.aispeech.aios.bridge.presenter.CustomizeMapsPresenter;
 import com.aispeech.aios.common.config.SDKBroadcast;
+import com.aispeech.aios.sdk.AIOSForCarSDK;
 
 public class BridgeReceiver extends BroadcastReceiver {
     private static final String TAG = "Bridge - BridgeReceiver";
@@ -47,6 +48,10 @@ public class BridgeReceiver extends BroadcastReceiver {
         } else if("action_change_local_map".equals(action)) {
             String mapType = intent.getStringExtra("maptype");
             CustomizeMapsPresenter.getInstance().changeDefaultMap(mapType);
+        } else if("com.conqueror.parkingMonitoring".equals(action)) {
+            AIOSForCarSDK.disableAIOS();
+        } else if("com.conqueror.CancelparkingMonitoring".equals(action)) {
+            AIOSForCarSDK.enableAIOS();
         }
     }
 }

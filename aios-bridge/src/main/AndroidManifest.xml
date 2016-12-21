@@ -76,6 +76,8 @@
                 <action android:name="aios.intent.action.START_SDK_NODE" />
                 <!-- 如果需要在aios-daemon重启时一起重启，请接收该广播并将android:persistent属性设为"true" -->
                 <action android:name="aios.intent.action.REBOOT" />
+                <action android:name="com.conqueror.parkingMonitoring" /><!--停车 监控开启-->
+                <action android:name="com.conqueror.CancelparkingMonitoring" /><!--停车监控结束-->
             </intent-filter>
         </receiver>
 
@@ -83,11 +85,11 @@
             android:name="service.MainService"
             android:enabled="true"
             android:exported="true" />
-        <service
-            android:name="service.DaemonService"
-            android:enabled="true"
-            android:exported="true"
-            android:process="com.aios.bridge.remote"></service>
+        <!--<service-->
+            <!--android:name="service.DaemonService"-->
+            <!--android:enabled="true"-->
+            <!--android:exported="true"-->
+            <!--android:process="com.aios.bridge.remote"></service>-->
     </application>
 
 </manifest>

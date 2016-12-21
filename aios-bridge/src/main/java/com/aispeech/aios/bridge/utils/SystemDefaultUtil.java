@@ -6,8 +6,10 @@ import android.media.AudioManager;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
 import android.provider.Settings;
+import android.util.Log;
 
 import com.aispeech.ailog.AILog;
+import com.aispeech.aios.bridge.BridgeApplication;
 import com.aispeech.aios.sdk.AIOSForCarSDK;
 
 import java.lang.reflect.Method;
@@ -28,6 +30,12 @@ public class SystemDefaultUtil {
     private static final int TIPS_MUSIC_RAISE = 2;//音量增大
     private static final int TIPS_MUSIC_SETMAX = 3;//音量最大
     private static final int TIPS_MUSIC_SETMIN = 4;//音量最小
+    private static final int TIPS_MUSIC_LEVEL1 = 11;//音量调到1
+    private static final int TIPS_MUSIC_LEVEL2 = 12;//音量调到2
+    private static final int TIPS_MUSIC_LEVEL3 = 13;//音量调到3
+    private static final int TIPS_MUSIC_LEVEL4 = 14;//音量调到4
+    private static final int TIPS_MUSIC_LEVEL5 = 15;//音量调到5
+
     private static final int TIPS_BRIGHTNESS_RAISE = 5;
     private static final int TIPS_BRIGHTNESS_LOWER = 6;
     private static SystemDefaultUtil myUtil;
@@ -177,6 +185,12 @@ public class SystemDefaultUtil {
         return playBrightnessTips(TIPS_BRIGHTNESS_RAISE, currentBrightness);
     }
 
+    /**
+     * 调整屏幕亮度级数
+     */
+    public String setScreenBrightnessLevel(int level) throws Settings.SettingNotFoundException {
+        return playBrightnessTips(TIPS_BRIGHTNESS_RAISE, level * 51);
+    }
 
     /**
      * 屏幕亮度调到最暗
@@ -215,6 +229,13 @@ public class SystemDefaultUtil {
      */
     public String setVolumeUp() {
         return playSoundTips(TIPS_MUSIC_RAISE);
+    }
+
+    /**
+     * 调整多媒体音量级数
+     */
+    public String setVolumeLevel(int level) {
+        return playSoundTips(level);
     }
 
     /**
@@ -267,18 +288,34 @@ public class SystemDefaultUtil {
         return playSoundTips(TIPS_MUSIC_SETMIN);
     }
 
+    /**
+     * 获取当前音量
+     */
+    public int getCurrentVolume() {
+        return preferenceHelper.getVolume() / 3;
+    }
+
+    /**
+     * 获取当前亮度
+     */
+    public int getCurrentBrightness() {
+        return preferenceHelper.getBrightness() / 51;
+    }
 
     //音量调节播报
     private String playSoundTips(final int type) {
         setMute(false);
         int currentVolume = preferenceHelper.getVolume() / 3; //系统当前音量/3
         AILog.d("volume=" + preferenceHelper.getVolume());
+        Log.i("ljwtest:", "系统当前音量是" + preferenceHelper.getVolume());
+        Log.i("ljwtest:", "当前音量是" + currentVolume);
         switch (type) {
             case TIPS_MUSIC_RAISE://增大音量
                 if (currentVolume >= 5) {
                     return play(TIPS_MUSIC_MAX);
                 } else {
                     currentVolume++;
+                    showVolumeDialog(currentVolume, TIPS_MUSIC_RAISE);
                     preferenceHelper.setVolume(currentVolume * 3);
                     mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume * 3, 0);
                     return play(TIPS_MUSIC_VOLUME + currentVolume);
@@ -289,6 +326,7 @@ public class SystemDefaultUtil {
                     return play(TIPS_MUSIC_MIN);
                 } else {
                     --currentVolume;
+                    showVolumeDialog(currentVolume, TIPS_MUSIC_LOWER);
                     preferenceHelper.setVolume(currentVolume * 3);
                     mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume * 3, 0);
                     return play(TIPS_MUSIC_VOLUME + currentVolume);
@@ -296,19 +334,94 @@ public class SystemDefaultUtil {
                 }
             case TIPS_MUSIC_SETMAX://音量最大
                 currentVolume = 5;
+                showVolumeDialog(currentVolume, TIPS_MUSIC_SETMAX);
                 preferenceHelper.setVolume(currentVolume * 3);
                 mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume * 3, 0);
                 return play(TIPS_MUSIC_MAX);
             case TIPS_MUSIC_SETMIN://音量最小
                 currentVolume = 1;
+                showVolumeDialog(currentVolume, TIPS_MUSIC_SETMIN);
                 preferenceHelper.setVolume(currentVolume * 3);
                 mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume * 3, 0);
                 return play(TIPS_MUSIC_MIN);
+            case TIPS_MUSIC_LEVEL1://音量调到1
+                currentVolume = 1;
+                showVolumeDialog(currentVolume, TIPS_MUSIC_LOWER);
+                preferenceHelper.setVolume(currentVolume * 3);
+                mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume * 3, 0);
+                return play(TIPS_MUSIC_VOLUME + currentVolume);
+            case TIPS_MUSIC_LEVEL2://音量调到2
+                currentVolume = 2;
+                showVolumeDialog(currentVolume, preferenceHelper.getVolume() >= 2 ? TIPS_MUSIC_LOWER : TIPS_MUSIC_RAISE);
+                preferenceHelper.setVolume(currentVolume * 3);
+                mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume * 3, 0);
+                return play(TIPS_MUSIC_VOLUME + currentVolume);
+            case TIPS_MUSIC_LEVEL3://音量调到3
+                currentVolume = 3;
+                showVolumeDialog(currentVolume, preferenceHelper.getVolume() >= 3 ? TIPS_MUSIC_LOWER : TIPS_MUSIC_RAISE);
+                preferenceHelper.setVolume(currentVolume * 3);
+                mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume * 3, 0);
+                return play(TIPS_MUSIC_VOLUME + currentVolume);
+            case TIPS_MUSIC_LEVEL4://音量调到4
+                currentVolume = 4;
+                showVolumeDialog(currentVolume, preferenceHelper.getVolume() >= 4 ? TIPS_MUSIC_LOWER : TIPS_MUSIC_RAISE);
+                preferenceHelper.setVolume(currentVolume * 3);
+                mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume * 3, 0);
+                return play(TIPS_MUSIC_VOLUME + currentVolume);
+            case TIPS_MUSIC_LEVEL5://音量调到5
+                currentVolume = 5;
+                showVolumeDialog(currentVolume, TIPS_MUSIC_RAISE);
+                preferenceHelper.setVolume(currentVolume * 3);
+                mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume * 3, 0);
+                return play(TIPS_MUSIC_VOLUME + currentVolume);
             default:
                 break;
         }
         return null;
 
+    }
+
+    private void showVolumeDialog(int level, int type) {
+        int offset = 0;
+        boolean up = false;
+        int currentVol = preferenceHelper.getVolume();
+        switch(type) {
+            case TIPS_MUSIC_RAISE:
+                offset = level*3-currentVol;
+                up = true;
+                break;
+            case TIPS_MUSIC_LOWER:
+                offset = currentVol - level*3;
+                up = false;
+                break;
+            case TIPS_MUSIC_SETMAX:
+                offset = 5;
+                up = true;
+                break;
+            case TIPS_MUSIC_SETMIN:
+                offset = 0;
+                up = false;
+                break;
+        }
+        if(offset != 0) {
+            if((level*3) > currentVol) {
+                for(int i = 0;i < offset; i++){
+                    mAudioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC,
+                            AudioManager.ADJUST_RAISE, AudioManager.FLAG_PLAY_SOUND
+                                    | AudioManager.FLAG_SHOW_UI);
+                }
+            } else {
+                for(int i = currentVol;i > offset; i--){
+                    mAudioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC,
+                            AudioManager.ADJUST_LOWER, AudioManager.FLAG_PLAY_SOUND
+                                    | AudioManager.FLAG_SHOW_UI);
+                }
+            }
+
+        } else
+            mAudioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC,
+                    AudioManager.ADJUST_SAME, AudioManager.FLAG_PLAY_SOUND
+                            | AudioManager.FLAG_SHOW_UI);
     }
 
     //屏幕亮度调节播报

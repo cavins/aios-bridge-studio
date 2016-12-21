@@ -70,6 +70,7 @@ public class StatusActivity extends Activity implements AIOSStatusListener {
     @Override
     public void onListeningChange(String status) {
         AILog.d(TAG, "倾听状态变动：" + status);
+        Log.d(LJWTAG, "倾听状态变动：" + status);
     }
 
     /**
@@ -82,6 +83,7 @@ public class StatusActivity extends Activity implements AIOSStatusListener {
     @Override
     public void onRecognitionChange(String status) {
         AILog.d(TAG, "识别状态变动：" + status);
+        Log.i(LJWTAG, status);
     }
 
     /**
@@ -113,6 +115,7 @@ public class StatusActivity extends Activity implements AIOSStatusListener {
     @Override
     public void onAIOSStatusChange(String status) {
         AILog.d(TAG, "AIOS状态改变->"+status);
+        Log.d(LJWTAG, "AIOS状态改变->" + status);
     }
 
     /**

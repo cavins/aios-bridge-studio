@@ -39,11 +39,10 @@ public class CustomizeWakeUpWordsPresenter {
         setMajorWakeUpWords();
     }
 
-    public void setMajorWakeUpWords() {
+    private void setMajorWakeUpWords() {
         majorWakeups = new ArrayList<MajorWakeup>();
         majorWakeups.add(new MajorWakeup(WAKE_UP_1, WAKE_UP_1_PINYIN, 0.12f));
         majorWakeups.add(new MajorWakeup(WAKE_UP_2, WAKE_UP_2_PINYIN, 0.12f));
         AIOSCustomizeManager.getInstance().setMajorWakeup(majorWakeups);
     }
-
 }

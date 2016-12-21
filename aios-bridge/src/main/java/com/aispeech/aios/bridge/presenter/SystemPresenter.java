@@ -2,15 +2,25 @@ package com.aispeech.aios.bridge.presenter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.hardware.input.InputManager;
+import android.media.AudioManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.view.InputDevice;
+import android.view.MotionEvent;
 
 import com.aispeech.aios.bridge.BridgeApplication;
+import com.aispeech.aios.bridge.utils.ShellCmd;
 import com.aispeech.aios.bridge.utils.SystemDefaultUtil;
 import com.aispeech.aios.common.property.SystemProperty;
 import com.aispeech.aios.sdk.listener.AIOSSystemListener;
 import com.aispeech.aios.sdk.manager.AIOSSystemManager;
+
+import java.io.DataOutputStream;
+import java.io.OutputStream;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by Administrator on 2016/12/5 0005.
@@ -18,6 +28,9 @@ import com.aispeech.aios.sdk.manager.AIOSSystemManager;
 
 public class SystemPresenter implements AIOSSystemListener {
     private static SystemPresenter systemPresenter;
+    private Timer timer;
+    private BrightTimeOutTimer brightDrawbleTimer;
+
     public static synchronized SystemPresenter getInstance() {
 
         if (systemPresenter == null) {
@@ -42,29 +55,22 @@ public class SystemPresenter implements AIOSSystemListener {
         String text;
         if (changeType.equals(SystemProperty.VolumeProperty.VOLUME_RAISE)) {
             SystemDefaultUtil.getInstance().setVolumeUp();
-            BridgeApplication.getContext().sendBroadcast(new Intent("com.aispeech.aios.volume.set"));
             text = "音量已增大";
-
         } else if (changeType.equals(SystemProperty.VolumeProperty.VOLUME_LOWER)) {
             SystemDefaultUtil.getInstance().setVolumeDown();
             text = "音量已减小";
-
         } else if (changeType.equals(SystemProperty.VolumeProperty.VOLUME_MAX)) {
             SystemDefaultUtil.getInstance().setMaxVolume();
             text = "音量已经调到最大";
-
         } else if (changeType.equals(SystemProperty.VolumeProperty.VOLUME_MIN)) {
             SystemDefaultUtil.getInstance().setMinVolume();
             text = "音量已经调到最小";
-
         } else if (changeType.equals(SystemProperty.VolumeProperty.VOLUME_MUTE)) {
             SystemDefaultUtil.getInstance().setMuteVolume();
             text = "媒体音已静音";
-
         } else if (changeType.equals(SystemProperty.VolumeProperty.VOLUME_UNMUTE)) {
             SystemDefaultUtil.getInstance().setUnMuteVolume();
             text = "取消静音";
-
         } else {
             text = "暂不支持此功能";
 
@@ -80,19 +86,20 @@ public class SystemPresenter implements AIOSSystemListener {
             if (changeType.equals(SystemProperty.BrightnessProperty.BRIGHTNESS_RAISE)) {
                 SystemDefaultUtil.getInstance().setScreenBrightnessUp();
                 text = "亮度已增加";
-
+                BridgeApplication.getContext().sendBroadcast(new Intent("com.aios.displaybrightess"));
+//                startTimerAfterBrightDisplay();
             } else if (changeType.equals(SystemProperty.BrightnessProperty.BRIGHTNESS_LOWER)) {
                 SystemDefaultUtil.getInstance().setScreenBrightnessDown();
                 text = "亮度已减小";
-
+                BridgeApplication.getContext().sendBroadcast(new Intent("com.aios.displaybrightess"));
             } else if (changeType.equals(SystemProperty.BrightnessProperty.BRIGHTNESS_MAX)) {
                 SystemDefaultUtil.getInstance().setScreenBrightnessMax();
                 text = "亮度已调到最大";
-
+                BridgeApplication.getContext().sendBroadcast(new Intent("com.aios.displaybrightess"));
             } else if (changeType.equals(SystemProperty.BrightnessProperty.BRIGHTNESS_MIN)) {
                 SystemDefaultUtil.getInstance().setScreenBrightnessMin();
                 text = "亮度已调到最小";
-
+                BridgeApplication.getContext().sendBroadcast(new Intent("com.aios.displaybrightess"));
             } else {
                 text = "暂不支持此功能";
 
@@ -171,6 +178,44 @@ public class SystemPresenter implements AIOSSystemListener {
 
         }
         return text;
+    }
+
+    /**
+     * 开启闹钟计时
+     */
+    private void startTimerAfterBrightDisplay() {
+        brightDrawbleTimer = new BrightTimeOutTimer();
+//        timer.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                Log.i("ljwtest:", "闹钟响啦");
+//            }
+//        }, 1000, 1000);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(1000);
+                    Log.i("ljwtest:", "闹钟响啦");
+                    ShellCmd.execCommand("input tap 100 200", true);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
+    /**
+     * 闹钟到点提醒
+     */
+    class BrightTimeOutTimer extends TimerTask {
+
+        @Override
+        public void run() {
+            Log.i("ljwtest:", "闹钟响啦");
+            if(timer != null && brightDrawbleTimer != null)
+                brightDrawbleTimer.cancel();
+        }
     }
 
     @Nullable

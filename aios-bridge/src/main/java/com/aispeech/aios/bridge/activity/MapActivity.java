@@ -3,6 +3,7 @@ package com.aispeech.aios.bridge.activity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ public class MapActivity extends Activity {
             AIOSTTSManager.speak("开始导航");
             Toast.makeText(getApplication() , "开始导航，包名："+packageName+" | 目的地："+poiBean.toString() , Toast.LENGTH_SHORT).show();
             AILog.d(TAG , "开始导航，包名："+packageName+" | 目的地："+poiBean.toString());
+            Log.i("ljwtest:", "开始导航，包名："+packageName+" | 目的地："+poiBean.toString());
         }
 
         @Override
@@ -36,12 +38,14 @@ public class MapActivity extends Activity {
             AIOSTTSManager.speak("退出成功");
             Toast.makeText(getApplication() , "退出导航，包名："+packageName , Toast.LENGTH_SHORT).show();
             AILog.d(TAG , "退出导航，包名："+packageName);
+            Log.i("ljwtest:", "退出导航，包名："+packageName);
         }
 
         @Override
         public void onOverview(@NonNull String packageName) {
             Toast.makeText(getApplication() , "查看全程，包名："+packageName , Toast.LENGTH_SHORT).show();
             AILog.d(TAG , "查看全程，包名："+packageName);
+            Log.i("ljwtest:", "查看全程，包名："+packageName);
         }
 
         @Override
@@ -49,18 +53,21 @@ public class MapActivity extends Activity {
             AIOSTTSManager.speak("开始路径规划");
             Toast.makeText(getApplication() , "开始路径规划，包名："+packageName+" | 规划策略："+strategy , Toast.LENGTH_SHORT).show();
             AILog.d(TAG , "开始路径规划，包名："+packageName+" | 规划策略："+strategy);
+            Log.i("ljwtest:", "开始路径规划，包名："+packageName+" | 规划策略："+strategy);
         }
 
         @Override
         public void onZoom(@NonNull String packageName, int zoomType) {
             Toast.makeText(getApplication() , "地图缩放，包名："+packageName+" | 缩放参数："+zoomType , Toast.LENGTH_SHORT).show();
             AILog.d(TAG , "地图缩放，包名："+packageName+" | 缩放参数："+zoomType);
+            Log.i("ljwtest:", "地图缩放，包名："+packageName+" | 缩放参数："+zoomType);
         }
 
         @Override
         public void onLocate(@NonNull String packageName) {
             Toast.makeText(getApplication() , "定位当前位置，包名："+packageName , Toast.LENGTH_SHORT).show();
             AILog.d(TAG , "定位当前位置，包名："+packageName);
+            Log.i("ljwtest:", "定位当前位置，包名："+packageName);
         }
     };
 
@@ -76,7 +83,7 @@ public class MapActivity extends Activity {
 
     public void onAddMaps(View view){
         //设置新地图信息
-        MapInfo tencentMap = new MapInfo("高德地图","com.autonavi.amapauto");
+        MapInfo tencentMap = new MapInfo("高德地图","com.autonavi.amapautolite");
         //设置地图是否支持退出导航，默认false
         tencentMap.setCancelNaviSupported(true);
         //设置地图是否支持查看全程，默认false
@@ -92,7 +99,7 @@ public class MapActivity extends Activity {
 
     public void onSetDefaultMap(View view){
         //将地图设置为默认地图
-        AIOSSettingManager.getInstance().setDefaultMap("com.autonavi.amapauto");
+        AIOSSettingManager.getInstance().setDefaultMap("com.autonavi.amapautolite");
     }
 
     @Override

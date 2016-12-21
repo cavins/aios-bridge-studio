@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
 //        textView = (TextView) findViewById(R.id.text_version_info);
 //        textView.setText(versionText);
 
-        // 添加ListItem，设置事件响应
+//         添加ListItem，设置事件响应
 //        if (mListView != null) {
 //            mListView.setAdapter(new DemoListAdapter());
 //            mListView.setOnItemClickListener(new OnItemClickListener() {
@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
 //        }
 
         startService(new Intent(this, MainService.class));
-        startService(new Intent(this, DaemonService.class));
+//        startService(new Intent(this, DaemonService.class));
         MainActivity.this.finish();
     }
 

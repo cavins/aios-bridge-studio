@@ -7,6 +7,7 @@ import android.view.WindowManager;
 
 import com.aispeech.ailog.AILog;
 import com.aispeech.aios.bridge.listener.BridgeAudioListener;
+import com.aispeech.aios.bridge.presenter.CustomizeWakeUpWordsPresenter;
 import com.aispeech.aios.bridge.utils.PreferenceUtil;
 import com.aispeech.aios.common.bean.MajorWakeup;
 import com.aispeech.aios.sdk.AIOSForCarSDK;
@@ -60,14 +61,17 @@ public class BridgeApplication extends Application {
                 );
 
                 //定制主唤醒词
-                List<MajorWakeup> majorWakeups = new ArrayList<MajorWakeup>();
-                majorWakeups.add(new MajorWakeup("你好小驰", "ni hao xiao chi", 0.13f));
-                AIOSCustomizeManager.getInstance().setMajorWakeup(majorWakeups);
+                //定制唤醒词
+                CustomizeWakeUpWordsPresenter.getInstance().loadingWakeUpWords();
+//                List<MajorWakeup> majorWakeups = new ArrayList<MajorWakeup>();
+//                majorWakeups.add(new MajorWakeup("你好小驰", "ni hao xiao chi", 0.13f));
+//                AIOSCustomizeManager.getInstance().setMajorWakeup(majorWakeups);
 
                 //定制悬浮窗为全屏
                 WindowManager.LayoutParams layoutParams = AIOSUIManager.getInstance().obtainLayoutParams();
                 layoutParams.type = WindowManager.LayoutParams.TYPE_PHONE;
                 layoutParams.flags = WindowManager.LayoutParams.FLAG_FULLSCREEN | WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN;
+                layoutParams.alpha = 0.8f;
                 AIOSUIManager.getInstance().setLayoutParams(layoutParams);
 
                 //设置音频管理监听器，请实现或者使用以下监听器
