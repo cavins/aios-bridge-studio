@@ -29,6 +29,9 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launcher);
+
+        //我的账号 yijian2033
+
         //其他账户push成功
         //小号push成功
 //        ListView mListView = (ListView) findViewById(R.id.list_view);
