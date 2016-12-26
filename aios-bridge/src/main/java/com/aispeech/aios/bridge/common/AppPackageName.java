@@ -19,5 +19,6 @@ public class AppPackageName {
     public static final String UPDATE_SYSTEM_APP = "com.conqueror.systemupdate";//系统升级
     public static final String FILE_MANAGER_APP = "com.mediatek.filemanager";
     public static final String FILE_XIMALAYA_APP = "com.ximalaya.ting.android";//喜马拉雅FM
+    public static final String AIOS = "com.aispeech.aios";//语音应用
 
 }

@@ -43,6 +43,8 @@ public class MainService extends Service {
     }
 
     private void initPresenter() {
+        ////定制启动提示语
+        AIOSCustomizeManager.getInstance().setLaunchTips("语音已启动，您可以使用征仔你好或者你好征仔来唤醒");
         //定制主唤醒词
         CustomizeWakeUpWordsPresenter.getInstance().loadingWakeUpWords();
         //默认开启AEC

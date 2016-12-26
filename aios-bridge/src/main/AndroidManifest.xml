@@ -61,6 +61,11 @@
                 <action android:name="aios.intent.action.map.BOOT" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="action_change_local_map" />
+                <action android:name="com.wanma.action.PLAY_TTS"/><!--电子狗语音播报-->
+                <action android:name="com.conqueror.parkingMonitoring" /><!--停车 监控开启-->
+                <action android:name="com.conqueror.CancelparkingMonitoring" /><!--停车监控结束-->
+                <action android:name="com.aispeech.aios.adapter.startlistening" />
+                <action android:name="com.aispeech.aios.adapter.stoplistening" />
             </intent-filter>
         </receiver>
         <receiver
@@ -76,8 +81,6 @@
                 <action android:name="aios.intent.action.START_SDK_NODE" />
                 <!-- 如果需要在aios-daemon重启时一起重启，请接收该广播并将android:persistent属性设为"true" -->
                 <action android:name="aios.intent.action.REBOOT" />
-                <action android:name="com.conqueror.parkingMonitoring" /><!--停车 监控开启-->
-                <action android:name="com.conqueror.CancelparkingMonitoring" /><!--停车监控结束-->
             </intent-filter>
         </receiver>
 
