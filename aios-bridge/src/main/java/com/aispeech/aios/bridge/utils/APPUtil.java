@@ -1,10 +1,12 @@
 package com.aispeech.aios.bridge.utils;
 
 import android.app.ActivityManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -200,8 +202,9 @@ public class APPUtil {
             AILog.d(TAG, "在本地找不到此应用！");
             return false;
         }
-        if (isRunning(pkg)) {
+        if (!isAppIsInBackground(pkg)) {
             AILog.d(TAG, "closeApplication application!!!");
+            Log.e("ljwtest:", "closeApplication application!!!");
             try{
                 initProcess();
                 killProcess(pkg);
@@ -211,7 +214,8 @@ public class APPUtil {
             }
             return true;
         } else {
-            AIOSTTSManager.speak("此应用没有运行...");
+//            AIOSTTSManager.speak("此应用没有运行...");
+            Log.e("ljwtestmynavi:", "此应用没有运行...");
             AILog.d(TAG, "无运行中的此应用");
             return false;
         }
@@ -268,11 +272,42 @@ public class APPUtil {
         return priority < 4;
     }
 
-    public  String getRunningActivityName() {
+    public String getRunningActivityName() {
         ActivityManager activityManager = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
         String runningActivity = activityManager.getRunningTasks(1).get(0).topActivity
                 .getClassName();
         return runningActivity;
+    }
+
+    /**
+     * 判断程序是否在前台运行
+     * @param context
+     * @return
+     */
+    public boolean isAppIsInBackground(String packageName) {
+        boolean isInBackground = true;
+        ActivityManager am = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT_WATCH) {
+            List<ActivityManager.RunningAppProcessInfo> runningProcesses = am.getRunningAppProcesses();
+            for (ActivityManager.RunningAppProcessInfo processInfo : runningProcesses) {
+                //前台程序
+                if (processInfo.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
+                    for (String activeProcess : processInfo.pkgList) {
+                        if (activeProcess.equals(packageName)) {
+                            isInBackground = false;
+                        }
+                    }
+                }
+            }
+        } else {
+            List<ActivityManager.RunningTaskInfo> taskInfo = am.getRunningTasks(1);
+            ComponentName componentInfo = taskInfo.get(0).topActivity;
+            if (componentInfo.getPackageName().equals(packageName)) {
+                isInBackground = false;
+            }
+        }
+
+        return isInBackground;
     }
 
 }

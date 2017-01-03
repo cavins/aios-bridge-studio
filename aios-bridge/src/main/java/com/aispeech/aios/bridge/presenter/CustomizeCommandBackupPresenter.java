@@ -10,6 +10,7 @@ import com.aispeech.aios.bridge.common.AppPackageName;
 import com.aispeech.aios.bridge.common.BtPhoneOrder;
 import com.aispeech.aios.bridge.common.FMOrder;
 import com.aispeech.aios.bridge.utils.APPUtil;
+import com.aispeech.aios.bridge.utils.ShellCmd;
 import com.aispeech.aios.bridge.utils.SystemDefaultUtil;
 import com.aispeech.aios.sdk.bean.Command;
 import com.aispeech.aios.sdk.bean.ShortcutWakeup;
@@ -154,6 +155,9 @@ public class CustomizeCommandBackupPresenter {
             } else if(CustomizeCommandsPresenter.CURRENT_BRIGHTNESS.equals(command)) {
                 int currentBrightness = SystemDefaultUtil.getInstance().getCurrentBrightness();
                 AIOSTTSManager.speak("当前亮度" + currentBrightness + "级");
+            } else if(CustomizeCommandsPresenter.EXIT_AND_FINISH_MAP.equals(command)) {
+                APPUtil.getInstance().closeApplication(AppPackageName.BAIDUMAP_APP);
+                APPUtil.getInstance().closeApplication(AppPackageName.GAODEMAP_APPLITE);
             }
         }
 
@@ -178,6 +182,11 @@ public class CustomizeCommandBackupPresenter {
                 AIOSTTSManager.speak("联系人未导入");
                 BridgeApplication.getContext().sendBroadcast(new Intent(BtPhoneOrder.AIOS_DISLOAD_CONTACT));
             }
+//            else if(CustomizeCommandsPresenter.TUI_CHU_DAO_HANG.equals(pinyin) || CustomizeCommandsPresenter.GUAN_BI_DAO_HANG.equals(pinyin)
+//                    || CustomizeCommandsPresenter.JIE_SHU_DAO_HANG.equals(pinyin) || CustomizeCommandsPresenter.QU_XIAO_DAO_HANG.equals(pinyin)
+//                    || CustomizeCommandsPresenter.TING_ZHI_DAO_HANG.equals(pinyin)) {
+//
+//            }
             Log.e("JohnLog", "Short cut wakeup:" + pinyin);
             //定制快捷唤醒词
             List<ShortcutWakeup> shortcutWakeupList = new ArrayList<ShortcutWakeup>();

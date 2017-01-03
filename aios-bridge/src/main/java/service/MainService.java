@@ -70,8 +70,14 @@ public class MainService extends Service {
         //开启默认UI优先级
         AIOSUIManager.getInstance().setUIPriorityEnabled(true);
 //        UIPriorityPresenter.getInstance().registerUIListener();
+        //注销部分默认快捷命令
+        cancelDefaultwords();
         //初始化音乐
 //        CustomizeMusicPresenter.getInstance().loadingCustomMusicApp();
+    }
+
+    private void cancelDefaultwords() {
+        AIOSCustomizeManager.getInstance().disableNativeShortcutWakeup(new String[]{"tui chu dao hang", "jie shu dao hang", "guan bi dao hang", "qv xiao dao hang", "ting zhi dao hang"});
     }
 
     private void unRegisPresenter() {

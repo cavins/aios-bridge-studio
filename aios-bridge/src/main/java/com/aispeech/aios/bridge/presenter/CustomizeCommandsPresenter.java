@@ -50,6 +50,7 @@ public class CustomizeCommandsPresenter {
 
     public static final String OPEN_HOME_QUICKSET = "da kai kuai jie she zhi";//打开快捷菜单
     public static final String CLOSE_HOME_QUICKSET = "guan bi kuai jie she zhi";//关闭快捷菜单
+    public static final String EXIT_AND_FINISH_MAP = "/condition/exitandfinishmap";//退出和关闭导航
 	
 	    /**
      * 自定义 快捷命令集
@@ -62,6 +63,12 @@ public class CustomizeCommandsPresenter {
     public static final String BT_CANCEL_CONTACT_2 = "qv xiao";
     public static final String BT_CANCEL_CONTACT_3 = "qv xiao";
     public static final String BT_CANCEL_CONTACT_4 = "bu yao";
+
+    public static final String TUI_CHU_DAO_HANG = "tui chu dao hang";
+    public static final String GUAN_BI_DAO_HANG = "guan bi dao hang";
+    public static final String QU_XIAO_DAO_HANG = "qv xiao dao hang";
+    public static final String JIE_SHU_DAO_HANG = "jie shu dao hang";
+    public static final String TING_ZHI_DAO_HANG = "ting zhi dao hang";
 
 
     /**
@@ -93,6 +100,7 @@ public class CustomizeCommandsPresenter {
     private static final Command SETBRIGHTNESSLEVEL4_COMMAND = new Command(SET_BRIGHTNESS_4, new String[]{"亮度调到四"});//亮度调到四命令集
     private static final Command SETBRIGHTNESSLEVEL5_COMMAND = new Command(SET_BRIGHTNESS_5, new String[]{"亮度调到五"});//亮度调到五命令集
     private static final Command CURRENT_BRIGHTNESS_COMMAND = new Command(CURRENT_BRIGHTNESS, new String[]{"当前亮度", "现在的亮度", "现在亮度是多少"});//亮度调到五命令集
+    private static final Command EXIT_AND_FINISH_MAP_COMMAND = new Command(EXIT_AND_FINISH_MAP, new String[] {"退出导航", "关闭导航", "停止导航", "取消导航", "结束导航"});//退出导航
 
 //    private static final Command OPEN_HOME_QUICKSET_COMMAND = new Command(OPEN_HOME_QUICKSET, new String[]{"打开快捷设置", "帮我打开快捷设置", "快捷设置"});//打开桌面快捷菜单
 //    private static final Command CLOSE_HOME_QUICKSET_COMMAND = new Command(CLOSE_HOME_QUICKSET, new String[] {"关闭快捷设置", "帮我关闭快捷设置"});//关闭快捷菜单
@@ -149,6 +157,12 @@ public class CustomizeCommandsPresenter {
         shortcutWakeupList.add(new ShortcutWakeup(CLOSE_HOME_QUICKSET, 0.12f));
         shortcutWakeupList.add(new ShortcutWakeup("da kai che men ", 0.12f));
         shortcutWakeupList.add(new ShortcutWakeup("guan bi che men", 0.12f));
+
+//        shortcutWakeupList.add(new ShortcutWakeup(TUI_CHU_DAO_HANG, 0.12f));
+//        shortcutWakeupList.add(new ShortcutWakeup(JIE_SHU_DAO_HANG, 0.12f));
+//        shortcutWakeupList.add(new ShortcutWakeup(GUAN_BI_DAO_HANG, 0.12f));
+//        shortcutWakeupList.add(new ShortcutWakeup(QU_XIAO_DAO_HANG, 0.12f));
+//        shortcutWakeupList.add(new ShortcutWakeup(TING_ZHI_DAO_HANG, 0.12f));
     }
 
     /**
@@ -181,6 +195,7 @@ public class CustomizeCommandsPresenter {
         initCommands.add(SETBRIGHTNESSLEVEL5_COMMAND);
         initCommands.add(CURRENT_VOLUME_COMMAND);
         initCommands.add(CURRENT_BRIGHTNESS_COMMAND);
+        initCommands.add(EXIT_AND_FINISH_MAP_COMMAND);
     }
 
     public ArrayList<Command> getAllCommands() {
