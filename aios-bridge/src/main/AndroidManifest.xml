@@ -3,7 +3,6 @@
     package="com.aispeech.aios.bridge"
     android:sharedUserId="android.uid.system"
     >
-
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
@@ -60,18 +59,33 @@
             android:name=".receiver.BridgeReceiver"
             android:enabled="true"
             android:exported="true">
-            <intent-filter>
+            <intent-filter android:priority="1000">
                 <action android:name="aios.intent.action.phone.BOOT" />
                 <action android:name="aios.intent.action.music.BOOT" />
                 <action android:name="aios.intent.action.map.BOOT" />
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <!--<action android:name="android.intent.action.BOOT_COMPLETED" />-->
                 <action android:name="action_change_local_map" />
                 <action android:name="com.wanma.action.PLAY_TTS"/><!--电子狗语音播报-->
                 <action android:name="com.conqueror.parkingMonitoring" /><!--停车 监控开启-->
                 <action android:name="com.conqueror.CancelparkingMonitoring" /><!--停车监控结束-->
                 <action android:name="com.aispeech.aios.adapter.startlistening" />
                 <action android:name="com.aispeech.aios.adapter.stoplistening" />
+                <action android:name="audiomanager.intent.action.AIOS_START" />
+                <action android:name="audiomanager.intent.action.AIOS_STOP" />
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+
+                <action android:name="com.ljw.servicealivetest" />
+                <action android:name="com.ljw.aiosalivetest" />
+                <action android:name="com.ljw.wakeupalivetest" />
+                <action android:name="com.ljw.enableaiostest" />
+                <action android:name="com.ljw.restartpresenter" />
+                <action android:name="com.ljw.rayee.syncsystemvol" />
+                <action android:name="com.conqueror.acc.NotifyAIOSEnterParking" />
             </intent-filter>
+        </receiver>
+
+        <receiver android:name=".receiver.RebootReceiver">
+            <action android:name="android.intent.action.BOOT_COMPLETED" />
         </receiver>
         <receiver
             android:name="com.aispeech.aios.sdk.receiver.SDKReceiver"
@@ -93,11 +107,11 @@
             android:name="service.MainService"
             android:enabled="true"
             android:exported="true" />
-        <!--<service-->
-            <!--android:name="service.DaemonService"-->
-            <!--android:enabled="true"-->
-            <!--android:exported="true"-->
-            <!--android:process="com.aios.bridge.remote"></service>-->
+        <service
+            android:name="service.DaemonService"
+            android:enabled="true"
+            android:exported="true"
+            android:process="com.aios.bridge.demoremote"></service>
     </application>
 
 </manifest>

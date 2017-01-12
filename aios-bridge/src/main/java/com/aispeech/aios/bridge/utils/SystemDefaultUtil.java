@@ -1,10 +1,13 @@
 package com.aispeech.aios.bridge.utils;
 
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.provider.Settings;
 import android.util.Log;
 
@@ -13,6 +16,8 @@ import com.aispeech.aios.bridge.BridgeApplication;
 import com.aispeech.aios.sdk.AIOSForCarSDK;
 
 import java.lang.reflect.Method;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * AIOS默认系统操作，用于实现 {@link com.aispeech.aios.sdk.listener.AIOSSystemListener AIOSSystemListener} 时使用。
@@ -38,6 +43,7 @@ public class SystemDefaultUtil {
 
     private static final int TIPS_BRIGHTNESS_RAISE = 5;
     private static final int TIPS_BRIGHTNESS_LOWER = 6;
+    private static final int DEFAULT_MUSIC_CELL = 3;
     private static SystemDefaultUtil myUtil;
     private String TAG = "AIOS-SDK-SystemOperateUtil";
     private boolean isMute = false;
@@ -271,6 +277,8 @@ public class SystemDefaultUtil {
             isMute = mute;
             mAudioManager.setStreamMute(AudioManager.STREAM_MUSIC, false);
         }
+        Intent intent = new Intent("com.bs360.synclaunchervol");
+        BridgeApplication.getContext().sendBroadcast(intent);
     }
 
     /**
@@ -304,11 +312,12 @@ public class SystemDefaultUtil {
 
     //音量调节播报
     private String playSoundTips(final int type) {
-        setMute(false);
+        Log.i("ljwtest:", "执行到音量调节命令类型是" + type);
+//        setMute(false);
+        mAudioManager.setStreamMute(AudioManager.STREAM_MUSIC, false);
         int currentVolume = preferenceHelper.getVolume() / 3; //系统当前音量/3
         AILog.d("volume=" + preferenceHelper.getVolume());
         Log.i("ljwtest:", "系统当前音量是" + preferenceHelper.getVolume());
-        Log.i("ljwtest:", "当前音量是" + currentVolume);
         switch (type) {
             case TIPS_MUSIC_RAISE://增大音量
                 if (currentVolume >= 5) {
@@ -346,7 +355,7 @@ public class SystemDefaultUtil {
                 return play(TIPS_MUSIC_MIN);
             case TIPS_MUSIC_LEVEL1://音量调到1
                 currentVolume = 1;
-                showVolumeDialog(currentVolume, TIPS_MUSIC_LOWER);
+                showVolumeDialog(currentVolume, TIPS_MUSIC_SETMIN);
                 preferenceHelper.setVolume(currentVolume * 3);
                 mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume * 3, 0);
                 return play(TIPS_MUSIC_VOLUME + currentVolume);
@@ -370,13 +379,15 @@ public class SystemDefaultUtil {
                 return play(TIPS_MUSIC_VOLUME + currentVolume);
             case TIPS_MUSIC_LEVEL5://音量调到5
                 currentVolume = 5;
-                showVolumeDialog(currentVolume, TIPS_MUSIC_RAISE);
+                showVolumeDialog(currentVolume, TIPS_MUSIC_SETMAX);
                 preferenceHelper.setVolume(currentVolume * 3);
                 mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume * 3, 0);
                 return play(TIPS_MUSIC_VOLUME + currentVolume);
             default:
                 break;
         }
+        Intent intent = new Intent("com.bs360.synclaunchervol");
+        BridgeApplication.getContext().sendBroadcast(intent);
         return null;
 
     }
@@ -395,33 +406,38 @@ public class SystemDefaultUtil {
                 up = false;
                 break;
             case TIPS_MUSIC_SETMAX:
-                offset = 5;
+                offset = 15 - currentVol;
                 up = true;
                 break;
             case TIPS_MUSIC_SETMIN:
-                offset = 0;
+                offset = currentVol - 3;
                 up = false;
                 break;
         }
-        if(offset != 0) {
-            if((level*3) > currentVol) {
-                for(int i = 0;i < offset; i++){
+        Log.d("ljwtestsync:", "level:" + level);
+        Log.d("ljwtestsync:", "type:" + type);
+        Log.d("ljwtestsync:", "offset:" + offset);
+//        if(offset != 0) {
+            if(up) {
+                Log.d("ljwtestsync:", "音量上升");
+//                for(int i = 0;i < realOffset; i++){
                     mAudioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC,
                             AudioManager.ADJUST_RAISE, AudioManager.FLAG_PLAY_SOUND
                                     | AudioManager.FLAG_SHOW_UI);
-                }
+//                }
             } else {
-                for(int i = currentVol;i > offset; i--){
+                Log.d("ljwtestsync:", "音量下降");
+//                for(int i = currentVol;i > (currentVol - offset); i--){
                     mAudioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC,
                             AudioManager.ADJUST_LOWER, AudioManager.FLAG_PLAY_SOUND
                                     | AudioManager.FLAG_SHOW_UI);
-                }
+//                }
             }
 
-        } else
-            mAudioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC,
-                    AudioManager.ADJUST_SAME, AudioManager.FLAG_PLAY_SOUND
-                            | AudioManager.FLAG_SHOW_UI);
+//        } else
+//            mAudioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC,
+//                    AudioManager.ADJUST_SAME, AudioManager.FLAG_PLAY_SOUND
+//                            | AudioManager.FLAG_SHOW_UI);
     }
 
     //屏幕亮度调节播报
@@ -433,6 +449,9 @@ public class SystemDefaultUtil {
         AILog.i(TAG, "currentBrightness：" + (brightness * 51));
         Settings.System.putInt(con.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, brightness * 51);//设置亮度值
         preferenceHelper.setBrightness(brightness * 51);
+
+        Intent intent = new Intent("com.bs360.brichangefromspeech");
+        BridgeApplication.getContext().sendBroadcast(intent);
         switch (type) {
             case TIPS_BRIGHTNESS_RAISE:
                 if (brightness == TIPS_BRIGHTNESS_MAX_VOLUME) {
@@ -458,6 +477,30 @@ public class SystemDefaultUtil {
         return text;
     }
 
+    /**
+     * 同步系统手动调节的音量
+     */
+    public void syncSystemVol(int volume) {
+        int cellCounts = volume / DEFAULT_MUSIC_CELL;
+        int remainder = volume % DEFAULT_MUSIC_CELL;
+        int calcLevel = 0;
+        switch (cellCounts) {
+            case 0:
+                calcLevel = 1 * 3;
+                break;
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                calcLevel = remainder >= 0 ? (3 * (cellCounts + 1)) : (3 * cellCounts);
+                break;
+            case 5:
+                calcLevel = 5 * 3;
+        }
+        Log.d("ljwtestsync:", "calcLevel:" + calcLevel);
+        preferenceHelper.setVolume(calcLevel);
+    }
+
     public class PreferenceHelper {
         public static final String TAG = "AIOS-SDK-PreferenceHelper";
         public static final String CONFIG_FILE_NAME = "AIOSSDKConfigs";
@@ -478,7 +521,7 @@ public class SystemDefaultUtil {
          * @return 音量值，默认为最大15
          */
         public int getVolume() {
-            int volume = mSp.getInt(PREF_KEY_MEDIA_VOLUME, 15);
+            int volume = mSp.getInt(PREF_KEY_MEDIA_VOLUME, 9);
             AILog.i(TAG, "current volume : " + volume);
             return volume;
         }

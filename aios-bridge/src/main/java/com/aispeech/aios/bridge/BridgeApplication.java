@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.view.WindowManager;
 
 import com.aispeech.ailog.AILog;
+import com.aispeech.aios.bridge.common.Common;
 import com.aispeech.aios.bridge.listener.BridgeAudioListener;
 import com.aispeech.aios.bridge.presenter.CustomizeWakeUpWordsPresenter;
 import com.aispeech.aios.bridge.utils.PreferenceUtil;
@@ -80,6 +81,9 @@ public class BridgeApplication extends Application {
                 AIOSCustomizeManager.getInstance().registerCustomizeListener(customizeListener);
                 //如果对接普通应用（音乐、导航、电话），且不需要AIOS主动拉起该应用，请将应用设置为非守护应用，代码如下:
                 //AIOSSystemManager.getInstance().setDaemonEnabled(false);
+
+                //初始化按键唤醒语音控制值
+                Common.isAIOSOpen = false;
             }
         });
     }
