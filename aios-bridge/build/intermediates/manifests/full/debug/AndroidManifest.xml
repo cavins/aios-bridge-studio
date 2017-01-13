@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.aispeech.aios.bridge"
-    android:sharedUserId="android.uid.system"
     android:versionCode="29"
     android:versionName="user1.0.11" >
 
@@ -14,11 +13,7 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.GET_TASKS" />
-    <uses-permission android:name="android.permission.FORCE_STOP_PACKAGES" />
-    <uses-permission android:name="android.permission.WRITE_SET_TASKS" />
 
-    <!-- 针对Android L上获取getRunningTasks()接口的权限 -->
     <application
         android:name="com.aispeech.aios.bridge.BridgeApplication"
         android:allowBackup="true"
@@ -66,28 +61,12 @@
             android:name="com.aispeech.aios.bridge.receiver.BridgeReceiver"
             android:enabled="true"
             android:exported="true" >
-            <intent-filter android:priority="1000" >
+            <intent-filter>
                 <action android:name="aios.intent.action.phone.BOOT" />
                 <action android:name="aios.intent.action.music.BOOT" />
                 <action android:name="aios.intent.action.map.BOOT" />
-                <!-- <action android:name="android.intent.action.BOOT_COMPLETED" /> -->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="action_change_local_map" />
-                <action android:name="com.conqueror.action.jw.CompleteBoot" />
-                <action android:name="com.wanma.action.PLAY_TTS" /> <!-- 电子狗语音播报 -->
-                <action android:name="com.conqueror.parkingMonitoring" /> <!-- 停车 监控开启 -->
-                <action android:name="com.conqueror.CancelparkingMonitoring" /> <!-- 停车监控结束 -->
-                <action android:name="com.aispeech.aios.adapter.startlistening" />
-                <action android:name="com.aispeech.aios.adapter.stoplistening" />
-                <action android:name="audiomanager.intent.action.AIOS_START" />
-                <action android:name="audiomanager.intent.action.AIOS_STOP" />
-                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
-                <action android:name="com.ljw.servicealivetest" />
-                <action android:name="com.ljw.aiosalivetest" />
-                <action android:name="com.ljw.wakeupalivetest" />
-                <action android:name="com.ljw.enableaiostest" />
-                <action android:name="com.ljw.restartpresenter" />
-                <action android:name="com.ljw.rayee.syncsystemvol" />
-                <action android:name="com.conqueror.acc.NotifyAIOSEnterParking" />
             </intent-filter>
         </receiver>
         <receiver
@@ -113,7 +92,7 @@
             android:name="service.DaemonService"
             android:enabled="true"
             android:exported="true"
-            android:process="com.aios.bridge.demoremote" />
+            android:process="com.aios.bridge.remote" />
     </application>
 
 </manifest>

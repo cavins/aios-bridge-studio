@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\src\\main\\aidl\\com\\aispeech\\aios\\bridge\\IBridgeAidlInterface.aidl
+ * Original file: C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\src\\main\\aidl\\com\\aispeech\\aios\\bridge\\IBridgeAidlInterface.aidl
  */
 package com.aispeech.aios.bridge;
 // Declare any non-default types here with import statements

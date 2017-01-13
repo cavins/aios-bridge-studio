@@ -1,50 +1,50 @@
 [
     {
-        "merged": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_system.xml",
-        "source": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_system.xml"
+        "merged": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_customize.xml",
+        "source": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_customize.xml"
     },
     {
-        "merged": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_map.xml",
-        "source": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_map.xml"
+        "merged": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_status.xml",
-        "source": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_status.xml"
+        "merged": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_map.xml",
+        "source": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_map.xml"
     },
     {
-        "merged": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_phone.xml",
-        "source": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_phone.xml"
+        "merged": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_launcher.xml",
+        "source": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_launcher.xml"
     },
     {
-        "merged": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_setting.xml",
-        "source": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_setting.xml"
+        "merged": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_radio.xml",
+        "source": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_radio.xml"
     },
     {
-        "merged": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_ui.xml",
-        "source": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_ui.xml"
+        "merged": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\demo_info_item.xml",
+        "source": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\demo_info_item.xml"
     },
     {
-        "merged": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_launcher.xml",
-        "source": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_launcher.xml"
+        "merged": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_system.xml",
+        "source": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_system.xml"
     },
     {
-        "merged": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_music.xml",
-        "source": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_music.xml"
+        "merged": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_phone.xml",
+        "source": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_phone.xml"
     },
     {
-        "merged": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
-        "source": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_setting.xml",
+        "source": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_setting.xml"
     },
     {
-        "merged": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\demo_info_item.xml",
-        "source": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\demo_info_item.xml"
+        "merged": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_music.xml",
+        "source": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_music.xml"
     },
     {
-        "merged": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_radio.xml",
-        "source": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_radio.xml"
+        "merged": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_ui.xml",
+        "source": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_ui.xml"
     },
     {
-        "merged": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_customize.xml",
-        "source": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_customize.xml"
+        "merged": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\layout\\activity_status.xml",
+        "source": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\layout\\activity_status.xml"
     }
 ]
