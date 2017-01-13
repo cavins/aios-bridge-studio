@@ -274,7 +274,7 @@ public class PhoneActivity extends Activity implements AIOSPhoneListener, View.O
         Contact.PhoneInfo phoneInfo = new Contact.PhoneInfo();
 
         /*-------------------- 添加第一个联系人 ----------------------*/
-        contact.setName("张三"); //第一个联系人
+        contact.setName("張三"); //第一个联系人
         phoneInfo.setNumber("10086"); //张三的第一个号码
         phoneInfo.setFlag("家庭");
         contact.addPhoneInfo(phoneInfo);
@@ -290,7 +290,7 @@ public class PhoneActivity extends Activity implements AIOSPhoneListener, View.O
         contact = new Contact();
         phoneInfo = new Contact.PhoneInfo();
 
-        contact.setName("张麻子"); //第一个联系人
+        contact.setName("陳華梅"); //第一个联系人
         phoneInfo.setNumber("1008611"); //张麻子的第一个号码
         contact.addPhoneInfo(phoneInfo);
 

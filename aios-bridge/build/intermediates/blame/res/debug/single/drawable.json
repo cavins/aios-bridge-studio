@@ -1,14 +1,14 @@
 [
     {
-        "merged": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\drawable\\rounded_corners.xml",
-        "source": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\drawable\\rounded_corners.xml"
+        "merged": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\drawable\\ripple_bg.xml",
+        "source": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\drawable\\ripple_bg.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_button.xml",
-        "source": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\drawable\\selector_button.xml"
+        "merged": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\drawable\\rounded_corners.xml",
+        "source": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\drawable\\rounded_corners.xml"
     },
     {
-        "merged": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\drawable\\ripple_bg.xml",
-        "source": "C:\\Users\\Administrator\\Desktop\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\drawable\\ripple_bg.xml"
+        "merged": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\build\\intermediates\\res\\merged\\debug\\drawable\\selector_button.xml",
+        "source": "E:\\gitCloneSpace\\aios-bridge-studio\\aios-bridge\\src\\main\\res\\drawable\\selector_button.xml"
     }
 ]

@@ -1,197 +1,277 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:2:1-93:12
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:2:1-116:12
 	package
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:3:5-39
-		INJECTED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:3:11-45
+		INJECTED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml
+		INJECTED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml
+	android:sharedUserId
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:4:11-52
 	android:versionName
-		INJECTED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml
+		INJECTED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml
+		INJECTED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:2:11-69
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml
+		INJECTED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml
+		INJECTED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:5:5-76
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:7:5-75
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:5:22-73
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:7:22-73
 uses-permission#android.permission.CHANGE_WIFI_STATE
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:6:5-76
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:8:5-75
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:6:22-73
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:8:22-73
 uses-permission#android.permission.WRITE_SETTINGS
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:7:5-73
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:9:5-72
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:7:22-70
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:9:22-70
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:8:5-81
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:10:5-80
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:8:22-78
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:10:22-78
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:9:5-67
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:11:5-66
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:9:22-64
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:11:22-64
+uses-permission#android.permission.GET_TASKS
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:12:5-67
+	android:name
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:12:22-65
+uses-permission#android.permission.FORCE_STOP_PACKAGES
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:13:5-77
+	android:name
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:13:22-75
+uses-permission#android.permission.WRITE_SET_TASKS
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:14:5-73
+	android:name
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:14:22-71
 application
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:11:5-91:19
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:16:5-114:19
 	android:label
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:15:9-41
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:20:9-41
 	android:supportsRtl
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:17:9-35
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:22:9-35
 	android:allowBackup
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:13:9-35
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:18:9-35
 	android:icon
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:14:9-45
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:19:9-45
 	android:persistent
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:16:9-34
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:21:9-34
 	android:theme
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:18:9-40
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:23:9-40
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:12:9-42
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:17:9-42
 activity#com.aispeech.aios.bridge.activity.MainActivity
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:19:9-25:20
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:24:9-30:20
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:19:19-56
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:24:19-56
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:20:13-24:29
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:25:13-29:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:21:17-69
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:26:17-68
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:21:25-66
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:26:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:23:17-77
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:28:17-76
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:23:27-74
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:28:27-74
 activity#com.aispeech.aios.bridge.activity.PhoneActivity
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:26:9-28:56
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:31:9-33:55
 	android:label
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:28:13-53
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:33:13-53
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:27:13-51
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:32:13-51
 activity#com.aispeech.aios.bridge.activity.MusicActivity
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:29:9-31:56
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:34:9-36:55
 	android:label
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:31:13-53
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:36:13-53
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:30:13-51
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:35:13-51
 activity#com.aispeech.aios.bridge.activity.CustomizeActivity
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:32:9-34:60
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:37:9-39:59
 	android:label
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:34:13-57
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:39:13-57
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:33:13-55
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:38:13-55
 activity#com.aispeech.aios.bridge.activity.SystemActivity
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:35:9-37:57
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:40:9-42:56
 	android:label
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:37:13-54
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:42:13-54
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:36:13-52
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:41:13-52
 activity#com.aispeech.aios.bridge.activity.MapActivity
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:38:9-40:54
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:43:9-45:53
 	android:label
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:40:13-51
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:45:13-51
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:39:13-49
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:44:13-49
 activity#com.aispeech.aios.bridge.activity.SettingActivity
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:41:9-43:58
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:46:9-48:57
 	android:label
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:43:13-55
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:48:13-55
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:42:13-53
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:47:13-53
 activity#com.aispeech.aios.bridge.activity.StatusActivity
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:44:9-46:57
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:49:9-51:56
 	android:label
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:46:13-54
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:51:13-54
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:45:13-52
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:50:13-52
 activity#com.aispeech.aios.bridge.activity.RadioActivity
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:47:9-49:56
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:52:9-54:55
 	android:label
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:49:13-53
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:54:13-53
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:48:13-51
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:53:13-51
 activity#com.aispeech.aios.bridge.activity.UIActivity
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:50:9-52:53
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:55:9-57:52
 	android:label
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:52:13-50
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:57:13-50
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:51:13-48
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:56:13-48
 receiver#com.aispeech.aios.bridge.receiver.BridgeReceiver
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:54:9-65:20
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:59:9-87:20
 	android:enabled
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:56:13-35
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:61:13-35
 	android:exported
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:57:13-36
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:62:13-36
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:55:13-52
-intent-filter#action_change_local_map+aios.intent.action.map.BOOT+aios.intent.action.music.BOOT+aios.intent.action.phone.BOOT+android.intent.action.BOOT_COMPLETED
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:58:13-64:29
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:60:13-52
+intent-filter#action_change_local_map+aios.intent.action.map.BOOT+aios.intent.action.music.BOOT+aios.intent.action.phone.BOOT+android.intent.action.ACTION_SHUTDOWN+audiomanager.intent.action.AIOS_START+audiomanager.intent.action.AIOS_STOP+com.aispeech.aios.adapter.startlistening+com.aispeech.aios.adapter.stoplistening+com.conqueror.CancelparkingMonitoring+com.conqueror.acc.NotifyAIOSEnterParking+com.conqueror.action.jw.CompleteBoot+com.conqueror.parkingMonitoring+com.ljw.aiosalivetest+com.ljw.enableaiostest+com.ljw.rayee.syncsystemvol+com.ljw.restartpresenter+com.ljw.servicealivetest+com.ljw.wakeupalivetest+com.wanma.action.PLAY_TTS
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:63:13-86:29
+	android:priority
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:63:28-51
 action#aios.intent.action.phone.BOOT
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:59:17-72
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:64:17-71
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:59:25-69
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:64:25-69
 action#aios.intent.action.music.BOOT
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:60:17-72
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:65:17-71
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:60:25-69
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:65:25-69
 action#aios.intent.action.map.BOOT
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:61:17-70
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:66:17-69
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:61:25-67
-action#android.intent.action.BOOT_COMPLETED
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:62:17-79
-	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:62:25-76
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:66:25-67
 action#action_change_local_map
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:63:17-66
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:68:17-65
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:63:25-63
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:68:25-63
+action#com.conqueror.action.jw.CompleteBoot
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:69:17-78
+	android:name
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:69:25-76
+action#com.wanma.action.PLAY_TTS
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:70:17-67
+	android:name
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:70:25-65
+action#com.conqueror.parkingMonitoring
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:71:17-73
+	android:name
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:71:25-71
+action#com.conqueror.CancelparkingMonitoring
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:72:17-79
+	android:name
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:72:25-77
+action#com.aispeech.aios.adapter.startlistening
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:73:17-82
+	android:name
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:73:25-80
+action#com.aispeech.aios.adapter.stoplistening
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:74:17-81
+	android:name
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:74:25-79
+action#audiomanager.intent.action.AIOS_START
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:75:17-79
+	android:name
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:75:25-77
+action#audiomanager.intent.action.AIOS_STOP
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:76:17-78
+	android:name
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:76:25-76
+action#android.intent.action.ACTION_SHUTDOWN
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:77:17-79
+	android:name
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:77:25-77
+action#com.ljw.servicealivetest
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:79:17-66
+	android:name
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:79:25-64
+action#com.ljw.aiosalivetest
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:80:17-63
+	android:name
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:80:25-61
+action#com.ljw.wakeupalivetest
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:81:17-65
+	android:name
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:81:25-63
+action#com.ljw.enableaiostest
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:82:17-64
+	android:name
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:82:25-62
+action#com.ljw.restartpresenter
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:83:17-66
+	android:name
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:83:25-64
+action#com.ljw.rayee.syncsystemvol
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:84:17-69
+	android:name
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:84:25-67
+action#com.conqueror.acc.NotifyAIOSEnterParking
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:85:17-82
+	android:name
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:85:25-80
 receiver#com.aispeech.aios.sdk.receiver.SDKReceiver
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:66:9-80:20
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:89:9-103:20
 	android:enabled
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:68:13-35
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:91:13-35
 	android:exported
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:69:13-36
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:92:13-36
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:67:13-70
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:90:13-70
 intent-filter#aios.intent.action.REBOOT+aios.intent.action.START_SDK_NODE+android.intent.action.BOOT_COMPLETED+android.intent.action.QUICKBOOT_POWERON
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:71:13-79:29
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:94:13-102:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:95:17-78
+	android:name
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:95:25-76
 action#android.intent.action.QUICKBOOT_POWERON
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:73:17-82
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:96:17-81
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:73:25-79
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:96:25-79
 action#aios.intent.action.START_SDK_NODE
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:76:17-76
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:99:17-75
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:76:25-73
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:99:25-73
 action#aios.intent.action.REBOOT
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:78:17-68
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:101:17-67
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:78:25-65
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:101:25-65
 service#service.MainService
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:82:9-85:39
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:105:9-108:38
 	android:enabled
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:84:13-35
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:107:13-35
 	android:exported
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:85:13-36
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:108:13-36
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:83:13-47
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:106:13-47
 service#service.DaemonService
-ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:86:9-90:64
+ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:109:9-113:68
 	android:enabled
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:88:13-35
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:111:13-35
 	android:process
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:90:13-53
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:113:13-57
 	android:exported
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:89:13-36
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:112:13-36
 	android:name
-		ADDED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:87:13-49
+		ADDED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml:110:13-49
 uses-sdk
-INJECTED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml reason: use-sdk injection requested
 	android:targetSdkVersion
-		INJECTED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml
+		INJECTED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml
+		INJECTED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Administrator\Desktop\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml
+		INJECTED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml
+		INJECTED from E:\gitCloneSpace\aios-bridge-studio\aios-bridge\src\main\AndroidManifest.xml

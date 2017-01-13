@@ -31,24 +31,25 @@ import com.aispeech.aios.sdk.manager.AIOSUIManager;
 public class MainService extends Service {
     private MainBinder mBinder;
     private MainServiceConnection mainServiceConnection;
+
     public MainService() {
     }
 
     @Override
     public void onCreate() {
         super.onCreate();
-        if(mBinder == null)
+        if (mBinder == null)
             mBinder = new MainBinder();
         mainServiceConnection = new MainServiceConnection();
 
-        AIOSCommon.getInstance().initPresenter();
-        if(Common.getIsFirstBoot(this) == Common.NOT_FIRST_BOOT) {
+
+        if (Common.getIsFirstBoot(this) == Common.NOT_FIRST_BOOT) {
             Log.i("ljwtest:", "不是第一次开机");
             AIOSForCarSDK.enableAIOS();
             AIOSCommon.getInstance().restartPresenter();
-        }
-        else {
+        } else {
             Log.i("ljwtest:", "第一次开机");
+            AIOSCommon.getInstance().initPresenter();
             Common.setIsFirstBoot(this);
         }
     }

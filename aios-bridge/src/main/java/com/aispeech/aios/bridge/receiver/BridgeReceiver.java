@@ -68,7 +68,7 @@ public class BridgeReceiver extends BroadcastReceiver {
             mapIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             BridgeApplication.getContext().startActivity(mapIntent);
 
-        } else if("android.intent.action.BOOT_COMPLETED".equals(action)) {
+        } else if("com.conqueror.action.jw.CompleteBoot".equals(action)) {
             Intent intent1 = new Intent(BridgeApplication.getContext(), MainActivity.class);
             intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             BridgeApplication.getContext().startActivity(intent1);
