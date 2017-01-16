@@ -86,7 +86,7 @@ public class CustomizeCommandsPresenter {
     private static final Command SHUTDOWN_COMMAND = new Command(SHUTDOWN, new String[] {"关机", "帮我关机"});//关机命令集
     private static final Command REBOOT_COMMAND = new Command(REBOOT, new String[] {"重启", "重启机器", "帮我重启", "帮我重启机器"});//重启命令集
     private static final Command BT_COMMAND_ON = new Command(OPEN_BT, new String[]{"打开蓝牙", "打开蓝牙电话", "帮我打开蓝牙", "帮我打开蓝牙电话", "开启蓝牙", "开启蓝牙电话", "启动蓝牙电话", "启动蓝牙"});//打开蓝牙命令集
-    private static final Command BT_COMMAND_OFF = new Command(CLOSE_BT, new String[]{"退出蓝牙", "关闭蓝牙电话", "关掉蓝牙", "关掉蓝牙电话"});//关闭蓝牙命令集
+    private static final Command BT_COMMAND_OFF = new Command(CLOSE_BT, new String[]{"关闭蓝牙","退出蓝牙", "关闭蓝牙电话", "关掉蓝牙", "关掉蓝牙电话"});//关闭蓝牙命令集
     private static final Command SETVOLUMELEVEL1_COMMAND = new Command(SET_VOLUME_1, new String[]{"音量调到一"});//音量调到一命令集
     private static final Command SETVOLUMELEVEL2_COMMAND = new Command(SET_VOLUME_2, new String[]{"音量调到二"});//音量调到二命令集
     private static final Command SETVOLUMELEVEL3_COMMAND = new Command(SET_VOLUME_3, new String[]{"音量调到三"});//音量调到三命令集

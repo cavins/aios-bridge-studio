@@ -4,6 +4,7 @@ package com.aispeech.aios.bridge.receiver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.net.wifi.WifiManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -68,19 +69,23 @@ public class BridgeReceiver extends BroadcastReceiver {
             mapIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             BridgeApplication.getContext().startActivity(mapIntent);
 
-        } else if("android.intent.action.BOOT_COMPLETED".equals(action)) {
+        }
+        else if("com.conqueror.action.jw.CompleteBoot".equals(action)) {
             Intent intent1 = new Intent(BridgeApplication.getContext(), MainActivity.class);
             intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             BridgeApplication.getContext().startActivity(intent1);
-        } else if("action_change_local_map".equals(action)) {
+        }
+        else if("action_change_local_map".equals(action)) {
             String mapType = intent.getStringExtra("maptype");
             CustomizeMapsPresenter.getInstance().changeDefaultMap(mapType);
         } else if("com.conqueror.acc.NotifyAIOSEnterParking".equals(action)) {
             Log.e("ljwtest:", "进入停车监控");
-            AIOSForCarSDK.disableAIOS();
+//            AIOSForCarSDK.disableAIOS();
+            AIOSSystemManager.getInstance().setACCOff();
         } else if("com.conqueror.CancelparkingMonitoring".equals(action)) {
             Log.e("ljwtest:", "退出停车监控");
-            AIOSForCarSDK.enableAIOS();
+//            AIOSForCarSDK.enableAIOS();
+            AIOSSystemManager.getInstance().setACCOn();
             WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
             if(!wifiManager.isWifiEnabled())
                 wifiManager.setWifiEnabled(true);
@@ -114,8 +119,11 @@ public class BridgeReceiver extends BroadcastReceiver {
             AIOSSystemManager.getInstance().startInteraction();
         } else if("com.ljw.enableaiostest".equals(action)) { //直接使能语音
             AIOSForCarSDK.enableAIOS();
-        } else if("android.intent.action.ACTION_SHUTDOWN".equals(action))
-            AIOSForCarSDK.disableAIOS();
+        }
+        else if("android.intent.action.ACTION_SHUTDOWN".equals(action)) {
+            AudioManager audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
+            audioManager.setStreamMute(AudioManager.STREAM_ALARM, true);
+        }
         else if("com.ljw.rayee.syncsystemvol".equals(action)) { //同步外部手动调节音量
             int volume = intent.getIntExtra("currentvolume", 999);
             SystemDefaultUtil.getInstance().syncSystemVol(volume);
