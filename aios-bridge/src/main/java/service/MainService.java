@@ -7,10 +7,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.media.AudioManager;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
 
+import com.aispeech.aios.bridge.BridgeApplication;
 import com.aispeech.aios.bridge.IBridgeAidlInterface;
 import com.aispeech.aios.bridge.R;
 import com.aispeech.aios.bridge.common.Common;
@@ -40,17 +42,7 @@ public class MainService extends Service {
         if(mBinder == null)
             mBinder = new MainBinder();
         mainServiceConnection = new MainServiceConnection();
-
         AIOSCommon.getInstance().initPresenter();
-        if(Common.getIsFirstBoot(this) == Common.NOT_FIRST_BOOT) {
-            Log.i("ljwtest:", "不是第一次开机");
-            AIOSForCarSDK.enableAIOS();
-            AIOSCommon.getInstance().restartPresenter();
-        }
-        else {
-            Log.i("ljwtest:", "第一次开机");
-            Common.setIsFirstBoot(this);
-        }
     }
 
 

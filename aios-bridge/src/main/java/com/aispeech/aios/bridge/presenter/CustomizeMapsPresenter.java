@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import com.aispeech.aios.bridge.common.AppPackageName;
 import com.aispeech.aios.common.bean.MapInfo;
 import com.aispeech.aios.common.bean.PoiBean;
+import com.aispeech.aios.common.property.MapProperty;
 import com.aispeech.aios.sdk.listener.AIOSMapListener;
 import com.aispeech.aios.sdk.manager.AIOSMapManager;
 import com.aispeech.aios.sdk.manager.AIOSSettingManager;
@@ -25,7 +26,7 @@ public class CustomizeMapsPresenter {
     /**
      * 接入的地图名，是语音指明唤醒的名字，如“打开高德地图”
      */
-    public static final String OPEN_GAODEMAP = "高德地图";
+//    public static final String OPEN_GAODEMAP = "高德地图";
     public static final String OPEN_BAIDU_MAP = "百度地图";
 
     public static synchronized CustomizeMapsPresenter getInstance() {
@@ -38,15 +39,26 @@ public class CustomizeMapsPresenter {
     }
 
     public CustomizeMapsPresenter() {
-        regisMapListener();
+//        regisMapListener();
         loadingMap();
     }
 
     public void loadingMap() {
-        mapInfos = new ArrayList<MapInfo>();
-        mapInfos.add(new MapInfo(OPEN_GAODEMAP, AppPackageName.GAODEMAP_APPLITE));
-        mapInfos.add(new MapInfo(OPEN_BAIDU_MAP, AppPackageName.BAIDUMAP_APP));
-        AIOSMapManager.getInstance().setLocalMapList(mapInfos);
+        //设置新地图信息
+        MapInfo baiduMap = new MapInfo(OPEN_BAIDU_MAP,AppPackageName.BAIDUMAP_APP);
+        //设置地图是否支持退出导航，默认false
+        baiduMap.setCancelNaviSupported(true);
+        //设置地图是否支持查看全程，默认false
+        baiduMap.setOverviewSupported(true);
+        //设置地图是否支持地图缩放，默认false
+        baiduMap.setZoomSupported(true);
+        //设置地图支持的路径规划策略，默认都不支持。目前AIOS只支持SupportedRoutePlanningStrategy下定义的四种规划策略
+        baiduMap.setSupportedRoutePlanningStrategy(MapProperty.SupportedRoutePlanningStrategy.DRIVING_AVOID_CONGESTION , MapProperty.SupportedRoutePlanningStrategy.DRIVING_SAVE_MONEY);
+
+//        //添加地图，添加多个地图请见setLocalMapsInfo(List<MapInfo>)
+//        AIOSMapManager.getInstance().setLocalMapInfo(baiduMap);
+//        mapInfos.add(new MapInfo(OPEN_BAIDU_MAP, AppPackageName.BAIDUMAP_APP));
+        AIOSMapManager.getInstance().setLocalMapInfo(baiduMap);
     }
 
     //高德地图设为默认地图

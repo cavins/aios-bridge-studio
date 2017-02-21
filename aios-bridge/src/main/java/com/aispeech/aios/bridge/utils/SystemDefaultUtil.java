@@ -327,6 +327,7 @@ public class SystemDefaultUtil {
                     showVolumeDialog(currentVolume, TIPS_MUSIC_RAISE);
                     preferenceHelper.setVolume(currentVolume * 3);
                     mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume * 3, 0);
+                    mAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, currentVolume * 3, 0);
                     return play(TIPS_MUSIC_VOLUME + currentVolume);
                 }
             case TIPS_MUSIC_LOWER://降低音量
@@ -338,6 +339,7 @@ public class SystemDefaultUtil {
                     showVolumeDialog(currentVolume, TIPS_MUSIC_LOWER);
                     preferenceHelper.setVolume(currentVolume * 3);
                     mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume * 3, 0);
+                    mAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, currentVolume * 3, 0);
                     return play(TIPS_MUSIC_VOLUME + currentVolume);
 
                 }
@@ -346,42 +348,49 @@ public class SystemDefaultUtil {
                 showVolumeDialog(currentVolume, TIPS_MUSIC_SETMAX);
                 preferenceHelper.setVolume(currentVolume * 3);
                 mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume * 3, 0);
+                mAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, currentVolume * 3, 0);
                 return play(TIPS_MUSIC_MAX);
             case TIPS_MUSIC_SETMIN://音量最小
                 currentVolume = 1;
                 showVolumeDialog(currentVolume, TIPS_MUSIC_SETMIN);
                 preferenceHelper.setVolume(currentVolume * 3);
                 mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume * 3, 0);
+                mAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, currentVolume * 3, 0);
                 return play(TIPS_MUSIC_MIN);
             case TIPS_MUSIC_LEVEL1://音量调到1
                 currentVolume = 1;
                 showVolumeDialog(currentVolume, TIPS_MUSIC_SETMIN);
                 preferenceHelper.setVolume(currentVolume * 3);
                 mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume * 3, 0);
+                mAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, currentVolume * 3, 0);
                 return play(TIPS_MUSIC_VOLUME + currentVolume);
             case TIPS_MUSIC_LEVEL2://音量调到2
                 currentVolume = 2;
                 showVolumeDialog(currentVolume, preferenceHelper.getVolume() >= 2 ? TIPS_MUSIC_LOWER : TIPS_MUSIC_RAISE);
                 preferenceHelper.setVolume(currentVolume * 3);
                 mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume * 3, 0);
+                mAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, currentVolume * 3, 0);
                 return play(TIPS_MUSIC_VOLUME + currentVolume);
             case TIPS_MUSIC_LEVEL3://音量调到3
                 currentVolume = 3;
                 showVolumeDialog(currentVolume, preferenceHelper.getVolume() >= 3 ? TIPS_MUSIC_LOWER : TIPS_MUSIC_RAISE);
                 preferenceHelper.setVolume(currentVolume * 3);
                 mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume * 3, 0);
+                mAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, currentVolume * 3, 0);
                 return play(TIPS_MUSIC_VOLUME + currentVolume);
             case TIPS_MUSIC_LEVEL4://音量调到4
                 currentVolume = 4;
                 showVolumeDialog(currentVolume, preferenceHelper.getVolume() >= 4 ? TIPS_MUSIC_LOWER : TIPS_MUSIC_RAISE);
                 preferenceHelper.setVolume(currentVolume * 3);
                 mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume * 3, 0);
+                mAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, currentVolume * 3, 0);
                 return play(TIPS_MUSIC_VOLUME + currentVolume);
             case TIPS_MUSIC_LEVEL5://音量调到5
                 currentVolume = 5;
                 showVolumeDialog(currentVolume, TIPS_MUSIC_SETMAX);
                 preferenceHelper.setVolume(currentVolume * 3);
                 mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume * 3, 0);
+                mAudioManager.setStreamVolume(AudioManager.STREAM_ALARM, currentVolume * 3, 0);
                 return play(TIPS_MUSIC_VOLUME + currentVolume);
             default:
                 break;

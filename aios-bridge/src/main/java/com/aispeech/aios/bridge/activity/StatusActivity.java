@@ -118,6 +118,11 @@ public class StatusActivity extends Activity implements AIOSStatusListener {
         Log.d(LJWTAG, "AIOS状态改变->" + status);
     }
 
+    @Override
+    public void onChatPlayerStatusChange(String status) {
+
+    }
+
     /**
      * TTS播报状态改变
      *
@@ -140,5 +145,10 @@ public class StatusActivity extends Activity implements AIOSStatusListener {
     @Override
     public void onRecorderStatusChange(String status) {
         AILog.d(TAG, "录音机播报状态改变->"+status);
+    }
+
+    @Override
+    public void onWxAudioStatusChange(String status) {
+
     }
 }
