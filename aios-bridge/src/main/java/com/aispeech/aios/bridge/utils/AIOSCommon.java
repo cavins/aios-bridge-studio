@@ -7,6 +7,7 @@ import com.aispeech.aios.bridge.presenter.CustomizeBlueToothPhonePresenter;
 import com.aispeech.aios.bridge.presenter.CustomizeCommandBackupPresenter;
 import com.aispeech.aios.bridge.presenter.CustomizeCommandsPresenter;
 import com.aispeech.aios.bridge.presenter.CustomizeFMPresenter;
+import com.aispeech.aios.bridge.presenter.CustomizeMapsPresenter;
 import com.aispeech.aios.bridge.presenter.CustomizeWakeUpWordsPresenter;
 import com.aispeech.aios.bridge.presenter.SystemPresenter;
 import com.aispeech.aios.sdk.manager.AIOSCustomizeManager;
@@ -69,7 +70,7 @@ public class AIOSCommon {
     }
 
     public void cancelDefaultwords() {
-        AIOSCustomizeManager.getInstance().disableNativeShortcutWakeup(new String[]{"tui chu dao hang", "jie shu dao hang", "guan bi dao hang", "qv xiao dao hang", "ting zhi dao hang"});
+        AIOSCustomizeManager.getInstance().disableNativeShortcutWakeup(new String[]{"tui chu dao hang", "jie shu dao hang", "guan bi dao hang", "qv xiao dao hang", "ting zhi dao hang", "da kai wei xin", "hui fu wei xin"});
     }
 
     public void unRegisPresenter() {

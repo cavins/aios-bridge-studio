@@ -47,6 +47,11 @@ public class CustomizeCommandsPresenter {
     public static final String SET_BRIGHTNESS_5 = "/condition/brightness5";//亮度调到5
     public static final String CURRENT_BRIGHTNESS = "/condition/currentbrightness";//询问当前亮度
 
+    /**
+     * 屏蔽微信的命令
+     */
+    public static final String OPEN_WECHAT = "/condition/openwechat";
+
 
     public static final String OPEN_HOME_QUICKSET = "da kai kuai jie she zhi";//打开快捷菜单
     public static final String CLOSE_HOME_QUICKSET = "guan bi kuai jie she zhi";//关闭快捷菜单
@@ -101,6 +106,7 @@ public class CustomizeCommandsPresenter {
     private static final Command SETBRIGHTNESSLEVEL5_COMMAND = new Command(SET_BRIGHTNESS_5, new String[]{"亮度调到五"});//亮度调到五命令集
     private static final Command CURRENT_BRIGHTNESS_COMMAND = new Command(CURRENT_BRIGHTNESS, new String[]{"当前亮度", "现在的亮度", "现在亮度是多少"});//亮度调到五命令集
     private static final Command EXIT_AND_FINISH_MAP_COMMAND = new Command(EXIT_AND_FINISH_MAP, new String[] {"退出导航", "关闭导航", "停止导航", "取消导航", "结束导航"});//退出导航
+    private static final Command OPEN_WECHAT_COMMOND = new Command(OPEN_WECHAT, new String[] {"打开微信", "恢复微信"});
 
 //    private static final Command OPEN_HOME_QUICKSET_COMMAND = new Command(OPEN_HOME_QUICKSET, new String[]{"打开快捷设置", "帮我打开快捷设置", "快捷设置"});//打开桌面快捷菜单
 //    private static final Command CLOSE_HOME_QUICKSET_COMMAND = new Command(CLOSE_HOME_QUICKSET, new String[] {"关闭快捷设置", "帮我关闭快捷设置"});//关闭快捷菜单
@@ -196,6 +202,7 @@ public class CustomizeCommandsPresenter {
         initCommands.add(CURRENT_VOLUME_COMMAND);
         initCommands.add(CURRENT_BRIGHTNESS_COMMAND);
         initCommands.add(EXIT_AND_FINISH_MAP_COMMAND);
+        initCommands.add(OPEN_WECHAT_COMMOND);
     }
 
     public ArrayList<Command> getAllCommands() {

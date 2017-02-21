@@ -158,6 +158,8 @@ public class CustomizeCommandBackupPresenter {
             } else if(CustomizeCommandsPresenter.EXIT_AND_FINISH_MAP.equals(command)) {
                 APPUtil.getInstance().closeApplication(AppPackageName.BAIDUMAP_APP);
                 APPUtil.getInstance().closeApplication(AppPackageName.GAODEMAP_APPLITE);
+            } else if(CustomizeCommandsPresenter.OPEN_WECHAT.equals(command)) {
+                AIOSTTSManager.speak("对不起，暂不支持此功能");
             }
         }
 
