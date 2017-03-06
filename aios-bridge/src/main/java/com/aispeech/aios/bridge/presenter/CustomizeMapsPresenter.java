@@ -1,7 +1,9 @@
 package com.aispeech.aios.bridge.presenter;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 
+import com.aispeech.aios.bridge.BridgeApplication;
 import com.aispeech.aios.bridge.common.AppPackageName;
 import com.aispeech.aios.common.bean.MapInfo;
 import com.aispeech.aios.common.bean.PoiBean;
@@ -22,12 +24,14 @@ import java.util.ListIterator;
 
 public class CustomizeMapsPresenter {
     private static CustomizeMapsPresenter customizeMapsPresenter;
+    public static String CURRENT_MAPS = AppPackageName.GAODEMAP_APPLITE;
     private List<MapInfo> mapInfos;
+    private static final String mapUrl = "baidumap://map/navi?query=";
     /**
      * 接入的地图名，是语音指明唤醒的名字，如“打开高德地图”
      */
 //    public static final String OPEN_GAODEMAP = "高德地图";
-    public static final String OPEN_BAIDU_MAP = "百度地图";
+    public static final String OPEN_BAIDU_MAP = "百度导航HD";
 
     public static synchronized CustomizeMapsPresenter getInstance() {
 
@@ -40,7 +44,8 @@ public class CustomizeMapsPresenter {
 
     public CustomizeMapsPresenter() {
 //        regisMapListener();
-        loadingMap();
+//        loadingMap();
+        setDefaultMap();
     }
 
     public void loadingMap() {
@@ -71,10 +76,14 @@ public class CustomizeMapsPresenter {
     }
 
     public void changeDefaultMap(String mapType) {
-        if(mapType.equals("gaode"))
+        if(mapType.equals("gaode")) {
             AIOSSettingManager.getInstance().setDefaultMap(AppPackageName.GAODEMAP_APPLITE);
-        else
+            CURRENT_MAPS = AppPackageName.GAODEMAP_APPLITE;
+        }
+        else {
             AIOSSettingManager.getInstance().setDefaultMap(AppPackageName.BAIDUMAP_APP);
+            CURRENT_MAPS = AppPackageName.BAIDUMAP_APP;
+        }
     }
 
     public void unregisMapListener() {
@@ -84,7 +93,9 @@ public class CustomizeMapsPresenter {
     private AIOSMapListener customizeMapListener = new AIOSMapListener() {
         @Override
         public void onStartNavi(@NonNull String packageName, @NonNull PoiBean poiBean) {
-
+            Intent intent = new Intent(mapUrl + poiBean.getName() + poiBean.getAddress());
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            BridgeApplication.getContext().startActivity(intent);
         }
 
         @Override

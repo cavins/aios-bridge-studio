@@ -83,7 +83,7 @@
                 <action android:name="action_change_local_map"/>
                 <action android:name="com.wanma.action.PLAY_TTS"/> <!-- 电子狗语音播报 -->
                 <action android:name="com.conqueror.parkingMonitoring"/> <!-- 停车 监控开启 -->
-                <action android:name="com.conqueror.CancelparkingMonitoring"/> <!-- 停车监控结束 -->
+                <action android:name="com.conqueror.acc.Action.NoParking"/> <!-- 停车监控结束 -->
                 <action android:name="com.aispeech.aios.adapter.startlistening"/>
                 <action android:name="com.aispeech.aios.adapter.stoplistening"/>
                 <action android:name="audiomanager.intent.action.AIOS_START"/>
@@ -96,7 +96,8 @@
                 <action android:name="com.ljw.enableaiostest"/>
                 <action android:name="com.ljw.restartpresenter"/>
                 <action android:name="com.ljw.rayee.syncsystemvol"/>
-                <action android:name="com.conqueror.acc.NotifyAIOSEnterParking"/>
+                <action android:name="com.conqueror.acc.Action.EnterParking"/>
+                <action android:name="action.launcher.background"/>
             </intent-filter>
         </receiver>
         <receiver

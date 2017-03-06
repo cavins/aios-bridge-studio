@@ -222,6 +222,29 @@ public class APPUtil {
     }
 
     /**
+     * 结束掉某个应用不管是前台还是后台
+     * @param pkg 包名
+     * @return
+     */
+    public boolean closeApplicationBack(String pkg) {
+        if (!isInstalled(pkg)) {
+            AIOSTTSManager.speak("本地找不到此应用...");
+            AILog.d(TAG, "在本地找不到此应用！");
+            return false;
+        }
+            AILog.d(TAG, "closeApplication application!!!");
+            Log.e("ljwtest:", "closeApplication application!!!");
+            try{
+                initProcess();
+                killProcess(pkg);
+                closeOutputStream();
+            }catch(Exception e){
+                forceStopPackage(pkg);
+            }
+            return true;
+    }
+
+    /**
      * 通过包名打开应用 返回true:成功 返回false:失败
      */
     public boolean openApplication(String pkgName) {

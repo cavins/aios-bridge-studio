@@ -8,7 +8,7 @@ public class AppPackageName {
     public static final String EDOG_APP = "tk.huayu.edog";//电子狗
     public static final String KUWO_APP = "cn.kuwo.kwmusiccar";//车载酷我
     public static final String VIDEO_APP = "cn.kuwo.kwmusiccar";//视频回放
-    public static final String BAIDUMAP_APP = "com.baidu.BaiduMap";//百度地图//com.baidu.BaiduMap.pad
+    public static final String BAIDUMAP_APP = "com.baidu.navi";//百度地图//com.baidu.BaiduMap.pad，com.baidu.navi.hd，com.baidu.navi
     public static final String GAODEMAP_APP = "com.autonavi.amapauto";//高德地图
     public static final String GAODEMAP_APPLITE = "com.autonavi.amapautolite";//高德地图车镜版
     public static final String TIPS_APP = "com.ideal.studys";//语音备忘录

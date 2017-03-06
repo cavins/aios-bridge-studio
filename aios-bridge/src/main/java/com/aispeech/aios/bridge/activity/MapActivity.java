@@ -31,6 +31,7 @@ public class MapActivity extends Activity {
             Toast.makeText(getApplication() , "开始导航，包名："+packageName+" | 目的地："+poiBean.toString() , Toast.LENGTH_SHORT).show();
             AILog.d(TAG , "开始导航，包名："+packageName+" | 目的地："+poiBean.toString());
             Log.i("ljwtest:", "开始导航，包名："+packageName+" | 目的地："+poiBean.toString());
+            //开始导航，包名：com.baidu.navi.hd | 目的地：PoiBean{name='深圳北站'poiId='null', latitude=22.609725, longitude=114.029113, address='致远中路28号', distance=17326, telephone=''}
         }
 
         @Override
@@ -75,27 +76,27 @@ public class MapActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-        AIOSMapManager.getInstance().registerMapListener(mapListener);
+//        AIOSMapManager.getInstance().registerMapListener(mapListener);
         //清空原有的地图信息，请根据具体情况决定是否调用。清空后，默认地图将会恢复到AIOS默认的地图（如果安装了）。
 //        AIOSMapManager.getInstance().cleanMapInfo();
     }
 
 
-    public void onAddMaps(View view){
-        //设置新地图信息
-        MapInfo tencentMap = new MapInfo("高德地图","com.autonavi.amapautolite");
-        //设置地图是否支持退出导航，默认false
-        tencentMap.setCancelNaviSupported(true);
-        //设置地图是否支持查看全程，默认false
-        tencentMap.setOverviewSupported(true);
-        //设置地图是否支持地图缩放，默认false
-        tencentMap.setZoomSupported(true);
-        //设置地图支持的路径规划策略，默认都不支持。目前AIOS只支持SupportedRoutePlanningStrategy下定义的四种规划策略
-        tencentMap.setSupportedRoutePlanningStrategy(MapProperty.SupportedRoutePlanningStrategy.DRIVING_AVOID_CONGESTION , MapProperty.SupportedRoutePlanningStrategy.DRIVING_SAVE_MONEY);
-
-        //添加地图，添加多个地图请见setLocalMapsInfo(List<MapInfo>)
-        AIOSMapManager.getInstance().setLocalMapInfo(tencentMap);
-    }
+//    public void onAddMaps(View view){
+//        //设置新地图信息
+//        MapInfo tencentMap = new MapInfo("高德地图","com.autonavi.amapautolite");
+//        //设置地图是否支持退出导航，默认false
+//        tencentMap.setCancelNaviSupported(true);
+//        //设置地图是否支持查看全程，默认false
+//        tencentMap.setOverviewSupported(true);
+//        //设置地图是否支持地图缩放，默认false
+//        tencentMap.setZoomSupported(true);
+//        //设置地图支持的路径规划策略，默认都不支持。目前AIOS只支持SupportedRoutePlanningStrategy下定义的四种规划策略
+//        tencentMap.setSupportedRoutePlanningStrategy(MapProperty.SupportedRoutePlanningStrategy.DRIVING_AVOID_CONGESTION , MapProperty.SupportedRoutePlanningStrategy.DRIVING_SAVE_MONEY);
+//
+//        //添加地图，添加多个地图请见setLocalMapsInfo(List<MapInfo>)
+//        AIOSMapManager.getInstance().setLocalMapInfo(tencentMap);
+//    }
 
     public void onSetDefaultMap(View view){
         //将地图设置为默认地图

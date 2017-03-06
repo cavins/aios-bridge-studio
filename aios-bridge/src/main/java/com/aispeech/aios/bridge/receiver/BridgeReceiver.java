@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.net.wifi.WifiManager;
+import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -15,6 +16,7 @@ import com.aispeech.aios.bridge.activity.MainActivity;
 import com.aispeech.aios.bridge.activity.MapActivity;
 import com.aispeech.aios.bridge.activity.MusicActivity;
 import com.aispeech.aios.bridge.activity.PhoneActivity;
+import com.aispeech.aios.bridge.common.AppPackageName;
 import com.aispeech.aios.bridge.common.Common;
 import com.aispeech.aios.bridge.presenter.CustomizeMapsPresenter;
 import com.aispeech.aios.bridge.utils.AIOSCommon;
@@ -78,11 +80,11 @@ public class BridgeReceiver extends BroadcastReceiver {
         else if("action_change_local_map".equals(action)) {
             String mapType = intent.getStringExtra("maptype");
             CustomizeMapsPresenter.getInstance().changeDefaultMap(mapType);
-        } else if("com.conqueror.acc.NotifyAIOSEnterParking".equals(action)) {
+        } else if("com.conqueror.acc.Action.EnterParking".equals(action)) {
             Log.e("ljwtest:", "进入停车监控");
 //            AIOSForCarSDK.disableAIOS();
             AIOSSystemManager.getInstance().setACCOff();
-        } else if("com.conqueror.CancelparkingMonitoring".equals(action)) {
+        } else if("com.conqueror.acc.Action.NoParking".equals(action)) {
             Log.e("ljwtest:", "退出停车监控");
 //            AIOSForCarSDK.enableAIOS();
             AIOSSystemManager.getInstance().setACCOn();
@@ -113,12 +115,14 @@ public class BridgeReceiver extends BroadcastReceiver {
         } else if("com.ljw.servicealivetest".equals(action)) { //测试服务是否运行
             boolean isServiceRun = APPUtil.getInstance().isServiceRun(MainService.class.getName());
             Log.d("ljwtestservice", "isServiceRun:" + MainService.class.getName() + ":" + isServiceRun);
+            SystemClock.setCurrentTimeMillis(1488271490);
+            Log.d("ljwtestgps", "已经设置时间了");
         } else if("com.ljw.aiosalivetest".equals(action)) { //测试语音播报功能
             AIOSTTSManager.speak("语音播报正常");
         } else if("com.ljw.wakeupalivetest".equals(action)) { //测试唤醒功能
             AIOSSystemManager.getInstance().startInteraction();
         } else if("com.ljw.enableaiostest".equals(action)) { //直接使能语音
-            AIOSForCarSDK.enableAIOS();
+
         }
         else if("android.intent.action.ACTION_SHUTDOWN".equals(action)) {
             AudioManager audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
@@ -129,6 +133,16 @@ public class BridgeReceiver extends BroadcastReceiver {
             SystemDefaultUtil.getInstance().syncSystemVol(volume);
         } else if("com.ljw.restartpresenter".equals(action)) {
             AIOSCommon.getInstance().restartPresenter();
+        } else if("action.launcher.background".equals(action)) {
+            Log.d("ljwtestgps", "收到桌面进入后台的通知");
+            if(CustomizeMapsPresenter.CURRENT_MAPS.equals(AppPackageName.GAODEMAP_APPLITE)) {
+                Log.d("ljwtestgps", "当前默认地图是高德，杀掉百度");
+                APPUtil.getInstance().closeApplicationBack(AppPackageName.BAIDUMAP_APP);
+            }
+            else {
+                Log.d("ljwtestgps", "当前默认地图是百度，杀掉高德");
+                APPUtil.getInstance().closeApplicationBack(AppPackageName.GAODEMAP_APPLITE);
+            }
         }
     }
 

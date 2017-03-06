@@ -160,6 +160,8 @@ public class CustomizeCommandBackupPresenter {
                 APPUtil.getInstance().closeApplication(AppPackageName.GAODEMAP_APPLITE);
             } else if(CustomizeCommandsPresenter.OPEN_WECHAT.equals(command)) {
                 AIOSTTSManager.speak("对不起，暂不支持此功能");
+            } else if(CustomizeCommandsPresenter.EDOG_FEEDBACK.equals(command)) {
+                BridgeApplication.getContext().sendBroadcast(new Intent("action.coogo.feedback"));
             }
         }
 
