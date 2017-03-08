@@ -24,7 +24,7 @@ public class ToastLoadContactUtil {
     }
 
 
-    public void showToastContact(final Context context, final double lat, final double lng) {
+    public void showToastContact(final Context context, final double lat, final double lng, final String locationAddress) {
 
         //弹出倒计时对话框
         ldialog = new TimerDialog(context);
@@ -35,6 +35,7 @@ public class ToastLoadContactUtil {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 openMapOperation(context, context.getApplicationContext().getResources().getString(R.string.app_name), lat, lng);
+//                openMapOperation(context, lat, lng, locationAddress);
             }
         }, 8);
 
@@ -57,13 +58,27 @@ public class ToastLoadContactUtil {
         String url = "androidauto://navi?sourceApplication=" + appName + "&poiname=fangheng"
                 + "&lat=" + lat
                 + "&lon=" + lon
-                + "&dev=1&style=2";
+                + "&dev=0&style=2";
         Intent intent = new Intent();
         intent.setData(android.net.Uri.parse(url));
         intent.setPackage("com.autonavi.amapautolite");
         intent.addCategory("android.intent.category.DEFAULT");
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
+    }
+
+    private void openMapOperation(Context context, double lat, double lon, String locationAddress) {
+
+        Intent intent = new Intent();
+        intent.setAction("AUTONAVI_STANDARD_BROADCAST_RECV");
+        intent.putExtra("KEY_TYPE", 10038);
+        intent.putExtra("POINAME", locationAddress);
+        intent.putExtra("LAT", lat);
+        intent.putExtra("LON", lon);
+        intent.putExtra("DEV", 1);
+        intent.putExtra("STYLE", 2);
+        intent.putExtra("SOURCE_APP", "AIOS Presenter");
+        context.sendBroadcast(intent);
     }
 
 
